@@ -7,6 +7,9 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
+use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
+use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DateRangeFilter;
+use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SmartSelectFilter;
 use Maatwebsite\Excel\Facades\Excel;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
@@ -241,10 +244,43 @@ class UsersTable extends DataTableComponent
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('email_verified_at', '>=', $value);
                 }),
+
             DateFilter::make('Verified To')
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('email_verified_at', '<=', $value);
                 }),
+            DatePickerFilter::make('Verified Before')
+            ->config([
+                'ariaDateFormat' => 'F j, Y',
+                'dateFormat' => 'Y-m-d H:i',
+                'earliestDate' => '2020-01-01',
+                'latestDate' => '2023-07-01',
+                'timeEnabled' => true,
+            ])
+            ->filter(function (Builder $builder, string $value) {
+                $builder->where('email_verified_at', '<=', $value);
+            }),
+            DateRangeFilter::make('Verified Range')
+            ->config([
+                'ariaDateFormat' => 'F j, Y',
+                'dateFormat' => 'Y-m-d',
+                'earliestDate' => '2020-01-01',
+                'latestDate' => '2023-07-01',
+            ])
+            ->setFilterPillValues([0 => 'minDate', 1 => 'maxDate'])
+            ->filter(function (Builder $builder, array $dateRange) {
+                $builder->whereDate('email_verified_at', '>=', $dateRange['minDate'])->whereDate('email_verified_at', '<=', $dateRange['maxDate']);
+            }),
+            SmartSelectFilter::make('Tag Smart')
+            ->options(
+                Tag::query()
+                    ->select('id', 'name')
+                    ->orderBy('name')
+                    ->get()
+                    ->toArray()
+            )->filter(function (Builder $builder, array $values) {
+                $builder->whereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
+            }),
         ];
     }
 

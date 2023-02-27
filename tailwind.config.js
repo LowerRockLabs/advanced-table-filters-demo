@@ -5,6 +5,7 @@ module.exports = {
     darkMode: 'class',
     purge: [
         './vendor/laravel/jetstream/**/*.blade.php',
+        './vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/resources/views/**/*.blade.php',
         './vendor/rappasoft/laravel-livewire-tables/resources/views/tailwind/**/*.blade.php',
         './vendor/rappasoft/laravel-livewire-tables/resources/views/**/*.blade.php',
         './storage/framework/views/*.php',
