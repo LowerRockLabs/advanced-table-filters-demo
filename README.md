@@ -1,10 +1,10 @@
-# Laravel Livewire Tables Demo
+# Laravel Livewire Tables Advanced Demo
 
-The repo is using a SQLite database, and has ready examples for Bootstrap 4 & 5, and Tailwind 2 for the [Laravel Livewire Tables](https://github.com/rappasoft/laravel-livewire-tables) plugin.
+For use in testing LaravelLivewireTablesAdvancedFilters 
+
+The repo is using a SQLite database, and has ready examples for Bootstrap 4 & 5, and Tailwind 2 for the [Laravel Livewire Tables](https://github.com/rappasoft/laravel-livewire-tables) [LaravelLivewireTablesAdvancedFilters](https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters) plugin.
 
 Installation:
 
 - php artisan migrate
 - php artisan db:seed
-
-### Enjoying this project? [Buy me a beer 🍺](https://www.buymeacoffee.com/rappasoft)
