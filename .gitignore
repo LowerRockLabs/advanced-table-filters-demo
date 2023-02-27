@@ -14,3 +14,7 @@ yarn-error.log
 /.idea
 /.vscode
 composer.json.local
+tabledemo.code-workspace
+.gitignore
+.devcontainer/devcontainer.json
+advanced-table-filters-demo.code-workspace
