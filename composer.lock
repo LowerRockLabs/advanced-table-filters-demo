@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "270668f12bf18e33d90470194286266e",
+    "content-hash": "e4df5eb3720ecc8147714adbf36cbf09",
     "packages": [
         {
             "name": "brick/math",
@@ -1858,16 +1858,16 @@
         },
         {
             "name": "lowerrocklabs/laravel-livewire-tables-advanced-filters",
-            "version": "0.51-beta",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters.git",
-                "reference": "083b860178fd205426658f21520243727caee829"
+                "reference": "e402d6f5f34ea80c8546330c8b8758ef8f5ade4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/083b860178fd205426658f21520243727caee829",
-                "reference": "083b860178fd205426658f21520243727caee829",
+                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/e402d6f5f34ea80c8546330c8b8758ef8f5ade4c",
+                "reference": "e402d6f5f34ea80c8546330c8b8758ef8f5ade4c",
                 "shasum": ""
             },
             "require": {
@@ -1924,9 +1924,9 @@
             ],
             "support": {
                 "issues": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/issues",
-                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/0.51-beta"
+                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/develop"
             },
-            "time": "2023-02-27T06:40:47+00:00"
+            "time": "2023-02-28T00:00:16+00:00"
         },
         {
             "name": "maatwebsite/excel",
@@ -7172,16 +7172,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.0.12",
+            "version": "10.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "87d5cfdb4ecf440fb9f08b636b1152be433fc6f1"
+                "reference": "c37a88d7a905266eab6498817a1bf1170043313f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/87d5cfdb4ecf440fb9f08b636b1152be433fc6f1",
-                "reference": "87d5cfdb4ecf440fb9f08b636b1152be433fc6f1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c37a88d7a905266eab6498817a1bf1170043313f",
+                "reference": "c37a88d7a905266eab6498817a1bf1170043313f",
                 "shasum": ""
             },
             "require": {
@@ -7252,7 +7252,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.12"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.13"
             },
             "funding": [
                 {
@@ -7268,7 +7268,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-25T06:05:15+00:00"
+            "time": "2023-02-27T13:07:57+00:00"
         },
         {
             "name": "roave/security-advisories",
@@ -9185,7 +9185,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "lowerrocklabs/laravel-livewire-tables-advanced-filters": 10,
+        "lowerrocklabs/laravel-livewire-tables-advanced-filters": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

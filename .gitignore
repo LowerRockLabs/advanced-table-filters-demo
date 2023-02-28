@@ -18,3 +18,4 @@ tabledemo.code-workspace
 .gitignore
 .devcontainer/devcontainer.json
 advanced-table-filters-demo.code-workspace
+config/livewiretablesadvancedfilters.php
