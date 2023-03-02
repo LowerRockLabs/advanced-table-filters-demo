@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+!/vendor/lowerrocklabs/*
 .env
 .env.backup
 .phpunit.result.cache
@@ -19,3 +20,4 @@ tabledemo.code-workspace
 .devcontainer/devcontainer.json
 advanced-table-filters-demo.code-workspace
 config/livewiretablesadvancedfilters.php
+lowerrocklabs.zip

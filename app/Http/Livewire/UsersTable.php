@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DateRangeFilter;
+use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\NumberRangeFilter;
+use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SlimSelectFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SmartSelectFilter;
 use Maatwebsite\Excel\Facades\Excel;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
@@ -16,10 +18,10 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
 use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
 use Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn;
-use Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn;
 use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
 use Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter;
-use Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter;
+//use Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter;
+
 use Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter;
 use Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter;
 
@@ -68,21 +70,12 @@ class UsersTable extends DataTableComponent
             })
             ->setTableRowUrlTarget(function ($row) {
                 return '_blank';
-            });
+            })->setEagerLoadAllRelationsEnabled();
     }
 
     public function columns(): array
     {
         return [
-            // ImageColumn::make('Avatar')
-            //     ->location(function($row) {
-            //         return asset('img/logo-'.$row->id.'.png');
-            //     })
-            //     ->attributes(function($row) {
-            //         return [
-            //             'class' => 'w-8 h-8 rounded-full',
-            //         ];
-            //     }),
             Column::make('Order', 'sort')
                 ->sortable()
                 ->collapseOnMobile()
@@ -94,6 +87,11 @@ class UsersTable extends DataTableComponent
                 ->searchable()
                 ->secondaryHeader($this->getFilterByKey('name'))
                 ->footer($this->getFilterByKey('name')),
+            Column::make('parent_id', 'parent_id')
+            ->sortable()
+            ->collapseOnMobile()
+            ->excludeFromColumnSelect(),
+
             ComponentColumn::make('E-mail', 'email')
                 ->sortable()
                 ->searchable()
@@ -124,13 +122,14 @@ class UsersTable extends DataTableComponent
             Column::make('Verified', 'email_verified_at')
                 ->sortable()
                 ->collapseOnTablet(),
+            Column::make('Group City', 'address.group.city.name')
+                ->sortable()
+                ->searchable()
+                ->collapseOnTablet(),
+
             Column::make('Tags')
                 ->label(fn ($row) => $row->tags->pluck('name')->implode(', ')),
-            // Column::make('Actions')
-            //     ->label(
-            //         fn($row, Column $column) => view('tables.cells.actions')->withUser($row)
-            //     )
-            //     ->unclickable(),
+
             ButtonGroupColumn::make('Actions')
                 ->unclickable()
                 ->attributes(function ($row) {
@@ -189,20 +188,54 @@ class UsersTable extends DataTableComponent
                     $builder->where('users.email', 'like', '%'.$value.'%');
                 })
                 ->hiddenFromMenus(),
-            MultiSelectFilter::make('Tags')
-                ->options(
-                    Tag::query()
-                        ->orderBy('name')
-                        ->get()
-                        ->keyBy('id')
-                        ->map(fn ($tag) => $tag->name)
-                        ->toArray()
-                )->filter(function (Builder $builder, array $values) {
-                    $builder->whereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
-                })
-                ->setFilterPillValues([
-                    '3' => 'Tag 1',
-                ]),
+
+            SlimSelectFilter::make('TagSlimSelect')
+            ->options(
+                Tag::query()
+                ->select('id', 'name')
+                ->orderBy('name')
+                ->pluck('name', 'id')
+                ->toArray()
+            )->filter(function (Builder $builder, array $values) {
+                $builder->withWhereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
+            }),
+
+            DatePickerFilter::make('Verified Before DateTime')
+            ->config([
+                'ariaDateFormat' => 'F j, Y',
+                'dateFormat' => 'Y-m-d',
+                'earliestDate' => '2020-01-01',
+                'latestDate' => '2023-07-01',
+                'timeEnabled' => false,
+            ])
+            ->filter(function (Builder $builder, string $value) {
+                $builder->where('email_verified_at', '<=', $value);
+            }),
+            DateRangeFilter::make('Verified Range')
+            ->config([
+                'ariaDateFormat' => 'F j, Y',
+                'dateFormat' => 'Y-m-d',
+                'earliestDate' => '2020-01-01',
+                'latestDate' => '2023-07-01',
+            ])
+            ->setFilterPillValues([0 => 'minDate', 1 => 'maxDate'])
+            ->filter(function (Builder $builder, array $dateRange) {
+                $builder->whereDate('email_verified_at', '>=', $dateRange['minDate'])->whereDate('email_verified_at', '<=', $dateRange['maxDate']);
+            }),
+            NumberRangeFilter::make('Success Rate')
+            ->options(
+                [
+                    'min' => 0,
+                    'max' => 100,
+                    'minRange' => 0,
+                    'maxRange' => 100,
+                    'suffix' => '%',
+
+                ]
+            )
+            ->filter(function (Builder $builder, array $values) {
+                $builder->whereBetween('users.id', [intval($values['min']), intval($values['max'])]);
+            }),
             SelectFilter::make('E-mail Verified', 'email_verified_at')
                 ->setFilterPillTitle('Verified')
                 ->options([
@@ -244,43 +277,49 @@ class UsersTable extends DataTableComponent
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('email_verified_at', '>=', $value);
                 }),
-
             DateFilter::make('Verified To')
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('email_verified_at', '<=', $value);
                 }),
-            DatePickerFilter::make('Verified Before')
-            ->config([
-                'ariaDateFormat' => 'F j, Y',
-                'dateFormat' => 'Y-m-d H:i',
-                'earliestDate' => '2020-01-01',
-                'latestDate' => '2023-07-01',
-                'timeEnabled' => true,
-            ])
-            ->filter(function (Builder $builder, string $value) {
-                $builder->where('email_verified_at', '<=', $value);
-            }),
-            DateRangeFilter::make('Verified Range')
+            DatePickerFilter::make('Verified Before Date')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
                 'dateFormat' => 'Y-m-d',
                 'earliestDate' => '2020-01-01',
                 'latestDate' => '2023-07-01',
+                'timeEnabled' => false,
             ])
-            ->setFilterPillValues([0 => 'minDate', 1 => 'maxDate'])
-            ->filter(function (Builder $builder, array $dateRange) {
-                $builder->whereDate('email_verified_at', '>=', $dateRange['minDate'])->whereDate('email_verified_at', '<=', $dateRange['maxDate']);
+            ->filter(function (Builder $builder, string $value) {
+                $builder->where('email_verified_at', '<=', $value);
             }),
+
             SmartSelectFilter::make('Tag Smart')
+            ->config(['optionsMethod' => 'complex'])
             ->options(
                 Tag::query()
                     ->select('id', 'name')
                     ->orderBy('name')
                     ->get()
                     ->toArray()
-            )->filter(function (Builder $builder, array $values) {
+            )->setIconStyling(true, '#00FF00', '3em', 'both')
+            ->filter(function (Builder $builder, array $values) {
                 $builder->whereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
             }),
+
+            SmartSelectFilter::make('Parent')
+            ->config(['optionsMethod' => 'simple'])
+            ->setCustomPillBlade('testfilter')
+            ->options(
+                User::query()
+                    ->select('id', 'name')
+                    ->orderBy('name')
+                    ->pluck('name', 'id')
+                    ->toArray()
+            )->setIconStyling(true, '#00FF00', '3em', 'both')
+            ->filter(function (Builder $builder, array $values) {
+                $builder->whereIn('parent_id', $values);
+            }),
+
         ];
     }
 

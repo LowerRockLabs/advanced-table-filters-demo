@@ -46,9 +46,9 @@ class User extends Authenticatable
         'sort' => 'integer',
     ];
 
-    public function parent(): HasOne
+    public function parent(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasOne(User::class, 'id', 'parent_id');
+        return $this->belongsTo(self::class, 'parent_id');
     }
 
     public function tags(): BelongsToMany
