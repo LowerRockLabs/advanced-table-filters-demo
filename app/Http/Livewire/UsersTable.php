@@ -6,11 +6,12 @@ use App\Exports\UsersExport;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DateRangeFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\NumberRangeFilter;
-use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SlimSelectFilter;
+//use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SlimSelectFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SmartSelectFilter;
 use Maatwebsite\Excel\Facades\Excel;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
@@ -29,15 +30,34 @@ class UsersTable extends DataTableComponent
 {
     public $myParam = 'Default';
 
-    public string $tableName = 'users1';
+    public $filterData = [];
+
+    public string $tableName = 'users2';
 
     public array $users1 = [];
 
     public function configure(): void
     {
+        /* $tags = Tag::query()
+         ->select('id', 'name', 'created_at')
+         ->orderBy('name')
+         ->get()
+         ->map(function ($tag) {
+             $tagValue['id'] = $tag->id;
+             $tagValue['name'] = $tag->name;
+             $tagValue['text'] = $tag->name;
+             $tagValue['html'] = strval($tag->created_at);
+             $tagValue['selected'] = (isset(($this->{$this->tableName}['filters']['tag_ss'])) ? (in_array($tag->id, $this->{$this->tableName}['filters']['tag_ss']) ? 'true' : false) : 'false');
+
+             return $tagValue;
+         });
+
+         dd($tags);*/
         $this->setPrimaryKey('id')
             ->setDebugEnabled()
             ->setAdditionalSelects(['users.id as id'])
+            ->setAdditionalSelectRaws(['CONCAT(users.id,users.name) as sid', ['CONCAT(users.id,?,users.parent_id) as tta', 'wee']])
+
             ->setConfigurableAreas([
                 'toolbar-left-start' => ['includes.areas.toolbar-left-start', ['param1' => $this->myParam, 'param2' => ['param2' => 2]]],
             ])
@@ -80,6 +100,14 @@ class UsersTable extends DataTableComponent
                 ->sortable()
                 ->collapseOnMobile()
                 ->excludeFromColumnSelect(),
+            Column::make('Id', 'id')
+            ->sortable()
+            ->collapseOnMobile()
+            ->excludeFromColumnSelect(),
+            Column::make('Full Name')
+            ->label(fn ($row) => $row->sid),
+            Column::make('Raw Select')
+            ->label(fn ($row) => $row->tta),
             Column::make('Name')
                 ->sortable(function (Builder $query, string $direction) {
                     return $query->orderBy('name', $direction); // Example, ->sortable() would work too.
@@ -102,10 +130,11 @@ class UsersTable extends DataTableComponent
                 ])
                 ->secondaryHeader($this->getFilterByKey('e-mail'))
                 ->footer($this->getFilterByKey('e-mail')),
+
             Column::make('Address', 'address.address')
-                ->sortable()
-                ->searchable()
-                ->collapseOnTablet(),
+            ->sortable()
+            ->searchable()
+            ->collapseOnTablet(),
             Column::make('Address Group', 'address.group.name')
                 ->sortable()
                 ->searchable()
@@ -118,10 +147,15 @@ class UsersTable extends DataTableComponent
                 ->sortable()
                 ->collapseOnMobile()
                 ->secondaryHeaderFilter('active')
-                ->footerFilter('active'),
-            Column::make('Verified', 'email_verified_at')
+                ->footerFilter('active')
+                ->setView('customBool'),
+            Column::make('付款方式', 'email_verified_at')
                 ->sortable()
+                ->setCustomSlug('test123')
                 ->collapseOnTablet(),
+            Column::make('詳細', 'address.group.city.name')
+            ->sortable()
+            ->collapseOnTablet(),
             Column::make('Group City', 'address.group.city.name')
                 ->sortable()
                 ->searchable()
@@ -188,8 +222,39 @@ class UsersTable extends DataTableComponent
                     $builder->where('users.email', 'like', '%'.$value.'%');
                 })
                 ->hiddenFromMenus(),
+            SmartSelectFilter::make('SmartSelect')
+            ->config(['optionsMethod' => 'complex'])
+            ->options(
+                Tag::query()
+                ->select('id', 'name', 'created_at')
+                ->orderBy('name')
+                ->get()
+                ->map(function ($tag) {
+                    $tagValue['id'] = $tag->id;
+                    $tagValue['name'] = $tag->name;
 
-            SlimSelectFilter::make('TagSlimSelect')
+                    return $tagValue;
+                })->keyBy('id')->toArray()
+            )->setIconStyling(true, '#00FF00', '1.25em', 'both')
+            ->filter(function (Builder $builder, array $values) {
+                $builder->whereHas('tags', fn ($query) => $query->whereIn('tags.id', array_keys($values)));
+            }),
+
+            /*SmartSelectFilter::make('Parent')
+            ->config(['optionsMethod' => 'simple'])
+            ->setCustomPillBlade('testfilter')
+            ->options(
+                User::query()
+                    ->without(['parent'])
+                    ->select('id', 'name')
+                    ->orderBy('name')
+                    ->pluck('name', 'id')
+                    ->toArray()
+            )->setIconStyling(true, '#00FF00', '1.25em', 'both')
+            ->filter(function (Builder $builder, array $values) {
+                $builder->whereIn('parent_id', $values);
+            }),*/
+            /*SlimSelectFilter::make('TagSlimSelect')
             ->options(
                 Tag::query()
                 ->select('id', 'name')
@@ -198,7 +263,27 @@ class UsersTable extends DataTableComponent
                 ->toArray()
             )->filter(function (Builder $builder, array $values) {
                 $builder->withWhereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
-            }),
+            }),*/
+
+            /*SlimSelectFilter::make('TagSlimSelect', 'tag_ss')
+            ->options(
+                Tag::query()
+                ->select('id', 'name', 'created_at')
+                ->orderBy('name')
+                ->get()
+                ->map(function ($tag) {
+                    $tagValue['id'] = $tag->id;
+                    $tagValue['name'] = $tag->name;
+                    $tagValue['text'] = $tag->name;
+                    $tagValue['value'] = $tag->id;
+                    $tagValue['html'] = $tag->name;
+                    $tagValue['selected'] = (isset(($this->{$this->tableName}['filters']['tag_ss'])) ? (in_array($tag->id, $this->{$this->tableName}['filters']['tag_ss']) ? 'true' : false) : 'false');
+
+                    return $tagValue;
+                })->toArray()*/
+            // )->filter(function (Builder $builder, array $values) {
+            //     $builder->withWhereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
+            // }),
 
             DatePickerFilter::make('Verified Before DateTime')
             ->config([
@@ -293,39 +378,12 @@ class UsersTable extends DataTableComponent
                 $builder->where('email_verified_at', '<=', $value);
             }),
 
-            SmartSelectFilter::make('Tag Smart')
-            ->config(['optionsMethod' => 'complex'])
-            ->options(
-                Tag::query()
-                    ->select('id', 'name')
-                    ->orderBy('name')
-                    ->get()
-                    ->toArray()
-            )->setIconStyling(true, '#00FF00', '3em', 'both')
-            ->filter(function (Builder $builder, array $values) {
-                $builder->whereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
-            }),
-
-            SmartSelectFilter::make('Parent')
-            ->config(['optionsMethod' => 'simple'])
-            ->setCustomPillBlade('testfilter')
-            ->options(
-                User::query()
-                    ->select('id', 'name')
-                    ->orderBy('name')
-                    ->pluck('name', 'id')
-                    ->toArray()
-            )->setIconStyling(true, '#00FF00', '3em', 'both')
-            ->filter(function (Builder $builder, array $values) {
-                $builder->whereIn('parent_id', $values);
-            }),
-
         ];
     }
 
     public function builder(): Builder
     {
-        return User::query();
+        return User::query()->with(['tags', 'parent']);
     }
 
     public function bulkActions(): array
@@ -363,7 +421,7 @@ class UsersTable extends DataTableComponent
     public function reorder($items): void
     {
         foreach ($items as $item) {
-            User::find((int) $item['value'])->update(['sort' => (int) $item['order']]);
+            User::find((int) $item['value'])->update(['sort' => (int) $item['order']])->addSelect(DB::raw('CONCAT(`users.id`,`users.name`) as casvv'));
         }
     }
 }

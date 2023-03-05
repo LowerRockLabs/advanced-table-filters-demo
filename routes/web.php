@@ -28,3 +28,7 @@ Route::get('/bootstrap-5', function () {
 Route::get('/tailwind', function () {
     return view('tw');
 })->name('tw');
+
+Route::get('/tailwind3', function () {
+    return view('tw3');
+})->name('tw3');

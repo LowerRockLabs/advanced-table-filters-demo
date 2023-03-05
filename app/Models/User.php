@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -46,9 +47,16 @@ class User extends Authenticatable
         'sort' => 'integer',
     ];
 
-    public function parent(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    protected $with = ['parent:id,name'];
+
+    public function parent(): HasOne
     {
-        return $this->belongsTo(self::class, 'parent_id');
+        return $this->hasOne(self::class, 'parent_id');
+    }
+
+    public function children(): HasMany
+    {
+        return $this->hasOne(self::class, 'id', 'parent_id');
     }
 
     public function tags(): BelongsToMany
@@ -59,5 +67,12 @@ class User extends Authenticatable
     public function address(): HasOne
     {
         return $this->hasOne(Address::class);
+    }
+
+    protected function farrr(): Attribute
+    {
+        return Attribute::make(
+            get: fn (mixed $value, array $attributes) => ((! empty($attributes['name']) ? ucfirst($attributes['name']).',' : '').strtolower($attributes['id'])),
+        );
     }
 }

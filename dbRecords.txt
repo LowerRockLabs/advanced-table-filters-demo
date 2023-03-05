@@ -1,0 +1,13 @@
+Tags
+array:10 [▼ // app/Http/Livewire/UsersTable.php:38
+  2 => "Abshirestad"
+  1 => "Dietrichhaven"
+  7 => "Kingview"
+  8 => "Lake Ninahaven"
+  3 => "North Jonathanmouth"
+  5 => "O'Konport"
+  9 => "Port Clarkburgh"
+  4 => "Port Tillman"
+  10 => "Sanfordport"
+  6 => "Sporerhaven"
+]
