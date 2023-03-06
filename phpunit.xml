@@ -19,7 +19,7 @@
             <clover outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/clover.xml"/>
         </report>
     </coverage>
-    <!-- <logging>
-        <junit outputFile="build/report.junit.xml"/>
-    </logging> -->
+    <logging>
+        <junit outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/report.junit.xml"/>
+    </logging>
 </phpunit>
