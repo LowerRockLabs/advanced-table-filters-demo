@@ -11,37 +11,45 @@
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^10.0",
-        "laravel/pint": "^1.6",
         "maatwebsite/excel": "^3.1",
-        "rappasoft/laravel-livewire-tables": "dev-devlatest",
-        "lowerrocklabs/laravel-livewire-tables-advanced-filters": "dev-develop"
+        "rappasoft/laravel-livewire-tables": "dev-devlatest"
     },
     "require-dev": {
+        "laravel/pint": "^1.6",
+        "ext-sqlite3": "*",
+        "orchestra/testbench": "^6.13|^7.0|^8.0",
         "barryvdh/laravel-debugbar": "^3.6",
+        "friendsofphp/php-cs-fixer": "^3.13",
         "spatie/laravel-ignition": "^2.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
+        "nunomaduro/larastan": "^2.2",
+        "spatie/laravel-ray": "^1.9",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^7.0",
-        "phpunit/phpunit": "^10.0",
-        "roave/security-advisories": "dev-latest"
+        "phpunit/phpunit": "^9.3",
+        "roave/security-advisories": "dev-latest",
+        "phpstan/phpstan": "^1.8",
+        "vimeo/psalm": "^4.3"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests"
         }
     },
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php vendor/bin/testbench package:discover --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -65,6 +73,9 @@
             "composer clear-all",
             "composer cache-all"
         ],
+        "test": "XDEBUG_MODE=coverage  vendor/bin/phpunit --colors=always",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "psalm": "vendor/bin/psalm",
         "pint": "./vendor/bin/pint"
     },
     "extra": {
