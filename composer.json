@@ -42,7 +42,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests"
+            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/"
         }
     },
     "scripts": {

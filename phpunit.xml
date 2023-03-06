@@ -6,17 +6,17 @@
 
     <testsuites>
         <testsuite name="LaravelLivewireTablesAdvancedFilters Test Suite">
-            <directory>vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/tests</directory>
+            <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests</directory>
         </testsuite>
     </testsuites>
-    <coverage cacheDirectory="vendor/lowerrocklabs/laravel-livewire-tables-advanced/.phpunit.cache/code-coverage" processUncoveredFiles="true">
+    <coverage cacheDirectory="vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/.phpunit.cache/code-coverage" processUncoveredFiles="true">
         <include>
-            <directory suffix=".php">vendor/lowerrocklabs/laravel-livewire-tables-advanced/src</directory>
+            <directory suffix=".php">./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/src</directory>
         </include>
         <report>
-            <html outputDirectory="vendor/lowerrocklabs/laravel-livewire-tables-advanced/build/coverage"/>
-            <text outputFile="vendor/lowerrocklabs/laravel-livewire-tables-advanced/build/coverage.txt"/>
-            <clover outputFile="vendor/lowerrocklabs/laravel-livewire-tables-advanced/clover.xml"/>
+            <html outputDirectory="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/coverage"/>
+            <text outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/coverage.txt"/>
+            <clover outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/clover.xml"/>
         </report>
     </coverage>
     <!-- <logging>
