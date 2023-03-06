@@ -13,7 +13,7 @@
         "laravel/framework": "^10.0",
         "laravel/pint": "^1.6",
         "maatwebsite/excel": "^3.1",
-        "rappasoft/laravel-livewire-tables": "^2.0",
+        "rappasoft/laravel-livewire-tables": "dev-devlatest",
         "lowerrocklabs/laravel-livewire-tables-advanced-filters": "dev-develop"
     },
     "require-dev": {
@@ -78,5 +78,11 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/LowerRockLabs/laravel-livewire-tables.git"
+        }
+    ]
 }

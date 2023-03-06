@@ -8,10 +8,11 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+//use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\CustomFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DateRangeFilter;
-use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\NumberRangeFilter;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SlimSelectFilter;
+use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\NumberRangeFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SmartSelectFilter;
 use Maatwebsite\Excel\Facades\Excel;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
@@ -35,6 +36,8 @@ class UsersTable extends DataTableComponent
     public string $tableName = 'users2';
 
     public array $users1 = [];
+
+    public array $allTags = [];
 
     public function configure(): void
     {
@@ -91,6 +94,16 @@ class UsersTable extends DataTableComponent
             ->setTableRowUrlTarget(function ($row) {
                 return '_blank';
             })->setEagerLoadAllRelationsEnabled();
+
+        $this->allTags = Tag::select('id', 'name', 'created_at')
+        ->orderBy('name')
+        ->get()
+        ->map(function ($tag) {
+            $tagValue['id'] = $tag->id;
+            $tagValue['name'] = $tag->name;
+
+            return $tagValue;
+        })->keyBy('id')->toArray();
     }
 
     public function columns(): array
@@ -100,10 +113,14 @@ class UsersTable extends DataTableComponent
                 ->sortable()
                 ->collapseOnMobile()
                 ->excludeFromColumnSelect(),
+            Column::make('My one off column')
+            ->label(
+                fn ($row, Column $column) => 'eEst'
+            ),
             Column::make('Id', 'id')
-            ->sortable()
-            ->collapseOnMobile()
-            ->excludeFromColumnSelect(),
+                ->sortable()
+                ->collapseOnMobile()
+                ->excludeFromColumnSelect(),
             Column::make('Full Name')
             ->label(fn ($row) => $row->sid),
             Column::make('Raw Select')
@@ -222,22 +239,20 @@ class UsersTable extends DataTableComponent
                     $builder->where('users.email', 'like', '%'.$value.'%');
                 })
                 ->hiddenFromMenus(),
+            /**CustomFilter::make('Test Custom Filter')
+            ->config([
+                'maxlength' => 10,
+                'placeholder' => 'Search E-mail',
+            ])
+            ->filter(function (Builder $builder, string $value) {
+                $builder->where('users.email', 'like', '%'.$value.'%');
+            }),*/
             SmartSelectFilter::make('SmartSelect')
-            ->config(['optionsMethod' => 'complex'])
             ->options(
-                Tag::query()
-                ->select('id', 'name', 'created_at')
-                ->orderBy('name')
-                ->get()
-                ->map(function ($tag) {
-                    $tagValue['id'] = $tag->id;
-                    $tagValue['name'] = $tag->name;
-
-                    return $tagValue;
-                })->keyBy('id')->toArray()
+                $this->allTags
             )->setIconStyling(true, '#00FF00', '1.25em', 'both')
             ->filter(function (Builder $builder, array $values) {
-                $builder->whereHas('tags', fn ($query) => $query->whereIn('tags.id', array_keys($values)));
+                $builder->whereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
             }),
 
             /*SmartSelectFilter::make('Parent')
