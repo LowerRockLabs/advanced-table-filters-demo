@@ -8,6 +8,10 @@
         <testsuite name="LaravelLivewireTablesAdvancedFilters Test Suite">
             <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests</directory>
         </testsuite>
+        <testsuite name="LaravelLivewireTablesAdvancedFilters Dusk">
+            <directory>tests</directory>
+        </testsuite>
+
     </testsuites>
     <coverage cacheDirectory="vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/.phpunit.cache/code-coverage" processUncoveredFiles="true">
         <include>
