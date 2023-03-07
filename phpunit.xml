@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true" executionOrder="random" failOnWarning="true" failOnRisky="true" failOnEmptyTestSuite="true" beStrictAboutOutputDuringTests="true" verbose="true" cacheResult="true">
-    <php>
-        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
-    </php>
-
-    <testsuites>
-        <testsuite name="LaravelLivewireTablesAdvancedFilters Test Suite">
-            <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests</directory>
-        </testsuite>
-        <testsuite name="LaravelLivewireTablesAdvancedFilters Dusk">
-            <directory>tests</directory>
-        </testsuite>
-
-    </testsuites>
-    <coverage cacheDirectory="vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/.phpunit.cache/code-coverage" processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/src</directory>
-        </include>
-        <report>
-            <html outputDirectory="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/coverage"/>
-            <text outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/coverage.txt"/>
-            <clover outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/clover.xml"/>
-        </report>
-    </coverage>
-    <logging>
-        <junit outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/report.junit.xml"/>
-    </logging>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true" executionOrder="random" failOnWarning="true" failOnRisky="true" failOnEmptyTestSuite="true" beStrictAboutOutputDuringTests="true" cacheResult="true" cacheDirectory=".phpunit.cache">
+  <php>
+    <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+  </php>
+  <testsuites>
+    <testsuite name="LaravelLivewireTablesAdvancedFilters Test Suite">
+      <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests</directory>
+    </testsuite>
+  </testsuites>
+  <coverage>
+    <include>
+      <directory suffix=".php">./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/src</directory>
+    </include>
+    <report>
+      <html outputDirectory="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/coverage"/>
+      <text outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/coverage.txt"/>
+      <clover outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/clover.xml"/>
+    </report>
+  </coverage>
+  <logging>
+    <junit outputFile="./vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/build/report.junit.xml"/>
+  </logging>
 </phpunit>
