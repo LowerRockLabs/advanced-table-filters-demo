@@ -18,7 +18,6 @@
                 './resources/views/**/*.blade.php',
                 './app/Http/Livewire/UsersTable.php',
             ],
-
             theme: {
                 extend: {
                     fontFamily: {
