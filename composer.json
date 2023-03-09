@@ -44,6 +44,7 @@
     "autoload-dev": {
         "psr-4": {
             "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Standard\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Standard/",
+            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Standard8\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Standard8/",
             "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Dusk\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Dusk/",
             "Tests\\": "tests/"
         }
