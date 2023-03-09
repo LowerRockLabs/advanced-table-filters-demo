@@ -5,7 +5,7 @@
     </php>
     <testsuites>
         <testsuite name="LaravelLivewireTablesAdvancedFilters Test Suite">
-            <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/standard</directory>
+            <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Standard</directory>
         </testsuite>
     </testsuites>
     <coverage>
