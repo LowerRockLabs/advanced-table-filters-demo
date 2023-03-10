@@ -1096,13 +1096,6 @@
                 './resources/views/**/*.blade.php',
                 './app/Http/Livewire/UsersTable.php',
             ],
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter var', fontFamily.sans],
-                    },
-                },
-            },
 
             variants: {
                 extend: {
