@@ -6,7 +6,6 @@ use App\Exports\UsersExport;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\CustomFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
@@ -59,12 +58,9 @@ class UsersTable extends DataTableComponent
         $this->setPrimaryKey('id')
             ->setDebugEnabled()
             ->setAdditionalSelects(['users.id as id'])
-            ->setAdditionalSelectRaws(['CONCAT(users.id,users.name) as sid', ['CONCAT(users.id,?,users.parent_id) as tta', 'wee']])
-
             ->setConfigurableAreas([
                 'toolbar-left-start' => ['includes.areas.toolbar-left-start', ['param1' => $this->myParam, 'param2' => ['param2' => 2]]],
             ])
-//            ->setPaginationMethod('simple')
             ->setReorderEnabled()
             ->setHideReorderColumnUnlessReorderingEnabled()
             ->setSecondaryHeaderTrAttributes(function ($rows) {
@@ -446,7 +442,7 @@ class UsersTable extends DataTableComponent
     public function reorder($items): void
     {
         foreach ($items as $item) {
-            User::find((int) $item['value'])->update(['sort' => (int) $item['order']])->addSelect(DB::raw('CONCAT(`users.id`,`users.name`) as casvv'));
+            User::find((int) $item['value'])->update(['sort' => (int) $item['order']]);
         }
     }
 }
