@@ -1087,7 +1087,7 @@
         tailwind.config = {
             mode: 'jit',
             darkMode: 'class',
-            purge: [
+            content: [
                 './vendor/laravel/jetstream/**/*.blade.php',
                 './vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/resources/views/**/*.blade.php',
                 './vendor/rappasoft/laravel-livewire-tables/resources/views/tailwind/**/*.blade.php',
