@@ -239,6 +239,16 @@ class UsersTable extends DataTableComponent
                     $builder->where('users.email', 'like', '%'.$value.'%');
                 })
                 ->hiddenFromMenus(),
+
+            NumberRangeFilter::make('Age')
+            ->config([
+                'minRange' => '21',
+                'maxRange' => '120',
+                'suffix' => ' ',
+            ])
+            ->filter(function (Builder $builder, array $numberRange) {
+                $builder->where('age', '>=', $numberRange['min'])->where('age', '<=', $numberRange['max']);
+            }),
             /**CustomFilter::make('Test Custom Filter')
             ->config([
                 'maxlength' => 10,

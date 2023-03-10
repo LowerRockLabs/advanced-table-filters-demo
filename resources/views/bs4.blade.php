@@ -37,12 +37,8 @@
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
         integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/browse/popper.js@1.16.1/dist/popper.min.js" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script>
-        $('[data-toggle="popover"]').popover();
-    </script>
 
     <livewire:scripts />
     {{--    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script> --}}

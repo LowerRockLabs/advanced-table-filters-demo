@@ -11,9 +11,9 @@
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^10.0",
-        "laravel/pint": "^1.6",
         "maatwebsite/excel": "^3.1",
-        "rappasoft/laravel-livewire-tables": "dev-devlatest"
+        "rappasoft/laravel-livewire-tables": "dev-devlatest",
+        "lowerrocklabs/laravel-livewire-tables-advanced-filters": "dev-develop"
     },
     "require-dev": {
         "ext-sqlite3": "*",
@@ -21,6 +21,7 @@
         "brianium/paratest": "^7.1",
         "fakerphp/faker": "^1.9.1",
         "laravel/dusk": "^7.7",
+        "laravel/pint": "^1.6",
         "laravel/sail": "^1.21",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^7.0",
@@ -38,14 +39,14 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/src/"
+            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\": "vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Standard\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Standard/",
-            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Standard8\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Standard8/",
-            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Dusk\\": "vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Dusk/",
+            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Standard\\": "vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/tests/Standard/",
+            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Standard8\\": "vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/tests/Standard8/",
+            "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\Tests\\Dusk\\": "vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/tests/Dusk/",
             "Tests\\": "tests/"
         }
     },

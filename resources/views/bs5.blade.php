@@ -38,7 +38,6 @@
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
         integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/browse/popper.js@1.16.1/dist/popper.min.js" crossorigin="anonymous"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>-->
