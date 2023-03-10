@@ -126,7 +126,7 @@ class UsersTable extends DataTableComponent
             ->collapseOnMobile()
             ->excludeFromColumnSelect(),
 
-            ComponentColumn::make('E-mail', 'email')
+            ComponentColumn::make('Email', 'email')
                 ->sortable()
                 ->searchable()
                 ->component('email')
