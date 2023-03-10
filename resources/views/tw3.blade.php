@@ -1,4 +1,4 @@
-<html x-cloak x-data="{ darkMode: localStorage.getItem('dark') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" x-bind:class="{ 'dark': darkMode }">
+<html x-cloak x-data="{ darkMode: localStorage.getItem('darkTw3') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('darkTw3', val))" x-bind:class="{ 'dark': darkMode }">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,6 +6,8 @@
     <title>Tailwind 3 Tables</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script>
+        const defaultTheme = require('@tailwindcss/defaultTheme');
+
         tailwind.config = {
             mode: 'jit',
             darkMode: 'class',
