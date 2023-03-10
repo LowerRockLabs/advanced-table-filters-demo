@@ -311,7 +311,7 @@ class UsersTable extends DataTableComponent
                     'max' => 100,
                 ]
             )
-            ->confg([
+            ->config([
                 'minRange' => 0,
                 'maxRange' => 100,
                 'suffix' => '%',
