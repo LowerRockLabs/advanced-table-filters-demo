@@ -321,7 +321,7 @@ class UsersTable extends DataTableComponent
                 ]
             )
             ->filter(function (Builder $builder, array $values) {
-                $builder->whereBetween('users.id', [intval($values['min']), intval($values['max'])]);
+                $builder->whereBetween('users.success_rate', [intval($values['min']), intval($values['max'])]);
             }),
             SelectFilter::make('E-mail Verified', 'email_verified_at')
                 ->setFilterPillTitle('Verified')
