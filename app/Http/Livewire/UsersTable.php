@@ -116,6 +116,7 @@ class UsersTable extends DataTableComponent
                 ->searchable()
                 ->secondaryHeader($this->getFilterByKey('name'))
                 ->footer($this->getFilterByKey('name')),
+
             Column::make('Success Rate', 'success_rate')
             ->sortable()
             ->searchable()
@@ -152,15 +153,8 @@ class UsersTable extends DataTableComponent
                 ->sortable()
                 ->collapseOnMobile()
                 ->secondaryHeaderFilter('active')
-                ->footerFilter('active')
-                ->setView('customBool'),
-            Column::make('付款方式', 'email_verified_at')
-                ->sortable()
-                ->setCustomSlug('test123')
-                ->collapseOnTablet(),
-            Column::make('詳細', 'address.group.city.name')
-            ->sortable()
-            ->collapseOnTablet(),
+                ->footerFilter('active').
+
             Column::make('Group City', 'address.group.city.name')
                 ->sortable()
                 ->searchable()
@@ -315,13 +309,15 @@ class UsersTable extends DataTableComponent
                 [
                     'min' => 0,
                     'max' => 100,
-                    'minRange' => 0,
-                    'maxRange' => 100,
-                    'suffix' => '%',
                 ]
             )
+            ->confg([
+                'minRange' => 0,
+                'maxRange' => 100,
+                'suffix' => '%',
+            ])
             ->filter(function (Builder $builder, array $values) {
-                $builder->whereBetween('users.success_rate', [intval($values['min']), intval($values['max'])]);
+                $builder->whereBetween('users.success_rate', [$values['min'], $values['max']]);
             }),
             SelectFilter::make('E-mail Verified', 'email_verified_at')
                 ->setFilterPillTitle('Verified')

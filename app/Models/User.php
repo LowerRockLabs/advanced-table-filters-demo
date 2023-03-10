@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -46,6 +45,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'active' => 'boolean',
         'sort' => 'integer',
+        'success_rate' => 'integer',
     ];
 
     protected $with = ['parent:id,name'];
@@ -68,12 +68,5 @@ class User extends Authenticatable
     public function address(): HasOne
     {
         return $this->hasOne(Address::class);
-    }
-
-    protected function farrr(): Attribute
-    {
-        return Attribute::make(
-            get: fn (mixed $value, array $attributes) => ((! empty($attributes['name']) ? ucfirst($attributes['name']).',' : '').strtolower($attributes['id'])),
-        );
     }
 }
