@@ -109,18 +109,6 @@ class UsersTable extends DataTableComponent
                 ->sortable()
                 ->collapseOnMobile()
                 ->excludeFromColumnSelect(),
-            Column::make('My one off column')
-            ->label(
-                fn ($row, Column $column) => 'eEst'
-            ),
-            Column::make('Id', 'id')
-                ->sortable()
-                ->collapseOnMobile()
-                ->excludeFromColumnSelect(),
-            Column::make('Full Name')
-            ->label(fn ($row) => $row->sid),
-            Column::make('Raw Select')
-            ->label(fn ($row) => $row->tta),
             Column::make('Name')
                 ->sortable(function (Builder $query, string $direction) {
                     return $query->orderBy('name', $direction); // Example, ->sortable() would work too.
@@ -128,6 +116,10 @@ class UsersTable extends DataTableComponent
                 ->searchable()
                 ->secondaryHeader($this->getFilterByKey('name'))
                 ->footer($this->getFilterByKey('name')),
+            Column::make('Success Rate', 'success_rate')
+            ->sortable()
+            ->searchable()
+            ->collapseOnTablet(),
             Column::make('parent_id', 'parent_id')
             ->sortable()
             ->collapseOnMobile()
@@ -235,16 +227,6 @@ class UsersTable extends DataTableComponent
                     $builder->where('users.email', 'like', '%'.$value.'%');
                 })
                 ->hiddenFromMenus(),
-
-            NumberRangeFilter::make('Age')
-            ->config([
-                'minRange' => '21',
-                'maxRange' => '120',
-                'suffix' => ' ',
-            ])
-            ->filter(function (Builder $builder, array $numberRange) {
-                $builder->where('age', '>=', $numberRange['min'])->where('age', '<=', $numberRange['max']);
-            }),
             /**CustomFilter::make('Test Custom Filter')
             ->config([
                 'maxlength' => 10,
@@ -306,7 +288,7 @@ class UsersTable extends DataTableComponent
             //     $builder->withWhereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
             // }),
 
-            DatePickerFilter::make('Verified Before DateTime')
+            DatePickerFilter::make('E-Mail Verified Before DateTime')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
                 'dateFormat' => 'Y-m-d',
@@ -317,7 +299,7 @@ class UsersTable extends DataTableComponent
             ->filter(function (Builder $builder, string $value) {
                 $builder->where('email_verified_at', '<=', $value);
             }),
-            DateRangeFilter::make('Verified Range')
+            DateRangeFilter::make('E-Mail Verified Range')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
                 'dateFormat' => 'Y-m-d',
@@ -336,7 +318,6 @@ class UsersTable extends DataTableComponent
                     'minRange' => 0,
                     'maxRange' => 100,
                     'suffix' => '%',
-
                 ]
             )
             ->filter(function (Builder $builder, array $values) {
