@@ -319,7 +319,8 @@ class UsersTable extends DataTableComponent
                 'suffix' => '%',
             ])
             ->filter(function (Builder $builder, array $values) {
-                $builder->whereBetween('users.success_rate', [$values['min'], $values['max']]);
+                $builder->where('users.success_rate', '>=', intval($values['min']))
+                ->where('users.success_rate', '<=', intval($values['max']))
             }),
 
             DatePickerFilter::make('EMail Verified Before DateTime')
@@ -333,6 +334,7 @@ class UsersTable extends DataTableComponent
             ->filter(function (Builder $builder, string $value) {
                 $builder->whereDate('email_verified_at', '<=', $value);
             }),
+
             SelectFilter::make('E-mail Verified', 'email_verified_at')
                 ->setFilterPillTitle('Verified')
                 ->options([
@@ -372,7 +374,7 @@ class UsersTable extends DataTableComponent
                     'max' => '2021-12-31',
                 ])
                 ->filter(function (Builder $builder, string $value) {
-                    $builder->where('email_verified_at', '>=', $value);
+                    $builder->whereDate('email_verified_at', '>=', $value);
                 }),
             DateFilter::make('Verified To')
                 ->filter(function (Builder $builder, string $value) {
