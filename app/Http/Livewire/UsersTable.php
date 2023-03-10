@@ -121,6 +121,7 @@ class UsersTable extends DataTableComponent
             ->sortable()
             ->searchable()
             ->collapseOnTablet(),
+
             Column::make('parent_id', 'parent_id')
             ->sortable()
             ->collapseOnMobile()
@@ -212,7 +213,7 @@ class UsersTable extends DataTableComponent
                     $builder->where('users.name', 'like', '%'.$value.'%');
                 })
                 ->hiddenFromMenus(),
-            TextFilter::make('E-mail')
+            TextFilter::make('Email')
                 ->config([
                     'maxlength' => 10,
                     'placeholder' => 'Search E-mail',
@@ -282,7 +283,7 @@ class UsersTable extends DataTableComponent
             //     $builder->withWhereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
             // }),
 
-            DatePickerFilter::make('E-Mail Verified Before DateTime')
+            DatePickerFilter::make('EMail Verified Before DateTime')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
                 'dateFormat' => 'Y-m-d',
@@ -293,7 +294,7 @@ class UsersTable extends DataTableComponent
             ->filter(function (Builder $builder, string $value) {
                 $builder->where('email_verified_at', '<=', $value);
             }),
-            DateRangeFilter::make('E-Mail Verified Range')
+            DateRangeFilter::make('EMail Verified Range')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
                 'dateFormat' => 'Y-m-d',
