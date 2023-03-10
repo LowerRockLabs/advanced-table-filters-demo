@@ -4,7 +4,7 @@
         <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
     </php>
     <testsuites>
-        <testsuite name="LaravelLivewireTablesAdvancedFilters Test Suite">
+        <testsuite name="Standard">
             <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Standard</directory>
         </testsuite>
         <testsuite name="Laravel8">
