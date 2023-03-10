@@ -320,7 +320,7 @@ class UsersTable extends DataTableComponent
             ])
             ->filter(function (Builder $builder, array $values) {
                 $builder->where('users.success_rate', '>=', intval($values['min']))
-                ->where('users.success_rate', '<=', intval($values['max']))
+                ->where('users.success_rate', '<=', intval($values['max']));
             }),
 
             DatePickerFilter::make('EMail Verified Before DateTime')
