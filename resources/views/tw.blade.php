@@ -1,4 +1,4 @@
-<html x-cloak x-data="{ darkMode: localStorage.getItem('dark') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" x-bind:class="{ 'dark': darkMode }">
+<html x-cloak x-data="{ darkMode: localStorage.getItem('darkTw2') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('darkTw2', val))" x-bind:class="{ 'dark': darkMode }">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -283,7 +283,7 @@ class UsersTable extends DataTableComponent
             //     $builder->withWhereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
             // }),
 
-            DatePickerFilter::make('EMail Verified Before DateTime')
+            DatePickerFilter::make('EMail Verified Before Date')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
                 'dateFormat' => 'Y-m-d',
@@ -292,8 +292,9 @@ class UsersTable extends DataTableComponent
                 'timeEnabled' => false,
             ])
             ->filter(function (Builder $builder, string $value) {
-                $builder->where('email_verified_at', '<=', $value);
+                $builder->whereDate('email_verified_at', '<=', $value);
             }),
+
             DateRangeFilter::make('EMail Verified Range')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
@@ -319,6 +320,18 @@ class UsersTable extends DataTableComponent
             ])
             ->filter(function (Builder $builder, array $values) {
                 $builder->whereBetween('users.success_rate', [$values['min'], $values['max']]);
+            }),
+
+            DatePickerFilter::make('EMail Verified Before DateTime')
+            ->config([
+                'ariaDateFormat' => 'F j, Y',
+                'dateFormat' => 'Y-m-d',
+                'earliestDate' => '2020-01-01',
+                'latestDate' => '2023-07-01',
+                'timeEnabled' => true,
+            ])
+            ->filter(function (Builder $builder, string $value) {
+                $builder->whereDate('email_verified_at', '<=', $value);
             }),
             SelectFilter::make('E-mail Verified', 'email_verified_at')
                 ->setFilterPillTitle('Verified')
