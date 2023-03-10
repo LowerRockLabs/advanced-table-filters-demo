@@ -153,7 +153,7 @@ class UsersTable extends DataTableComponent
                 ->sortable()
                 ->collapseOnMobile()
                 ->secondaryHeaderFilter('active')
-                ->footerFilter('active').
+                ->footerFilter('active'),
 
             Column::make('Group City', 'address.group.city.name')
                 ->sortable()
