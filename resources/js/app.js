@@ -1,7 +1,8 @@
-require('./bootstrap');
-import Alpine from 'alpinejs';
-import focus from '@alpinejs/focus';
+import './bootstrap';
 
+import Alpine from 'alpinejs';
+import md5 from 'md5';
+import focus from '@alpinejs/focus';
 import flatpickr from "flatpickr";
 
 window.Alpine = Alpine;

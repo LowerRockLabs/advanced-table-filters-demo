@@ -1115,7 +1115,7 @@
     <livewire:styles />
     @stack('styles')
 
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 </head>
 
 <body class="dark:bg-gray-900 dark:text-white">
