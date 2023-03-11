@@ -11,6 +11,16 @@
     <livewire:styles />
     @stack('styles')
 
+    <style>
+        .bg-gray {
+            background-color: grey;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+    </style>
+
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <style>
