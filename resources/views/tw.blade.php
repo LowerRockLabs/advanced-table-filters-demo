@@ -11,7 +11,6 @@
 
     @stack('styles')
 
-    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
