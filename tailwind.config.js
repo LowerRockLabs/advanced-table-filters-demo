@@ -20,6 +20,9 @@ module.exports = {
         './resources/views/**/*.blade.php',
         './app/Http/Livewire/UsersTable.php',
     ],
+    safelist: [
+        'w-80',
+    ],
     darkMode: 'class',
     theme: {
         extend: {
