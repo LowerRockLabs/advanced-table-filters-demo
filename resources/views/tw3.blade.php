@@ -1115,7 +1115,9 @@
     <livewire:styles />
     @stack('styles')
 
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
+
 </head>
 
 <body class="dark:bg-gray-900 dark:text-white">
