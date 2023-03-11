@@ -1,10 +1,9 @@
-import './bootstrap';
+require('./bootstrap');
 
-import Alpine from 'alpinejs';
-import md5 from 'md5';
-import focus from '@alpinejs/focus';
-import flatpickr from "flatpickr";
-
+require('../../node_modules/alpinejs')
+require('../../node_modules/@alpinejs/focus')
+require('../../node_modules/flatpickr')
 window.Alpine = Alpine;
 window.Alpine.plugin(focus);
 window.Alpine.start();
+
