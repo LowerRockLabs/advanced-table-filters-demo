@@ -6622,12 +6622,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters.git",
-                "reference": "81a771b93fdb3d689aecc8527d5d0eea8bc4d053"
+                "reference": "b98cb251e2e712e62f512a6fab776b1a068dde41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/81a771b93fdb3d689aecc8527d5d0eea8bc4d053",
-                "reference": "81a771b93fdb3d689aecc8527d5d0eea8bc4d053",
+                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/b98cb251e2e712e62f512a6fab776b1a068dde41",
+                "reference": "b98cb251e2e712e62f512a6fab776b1a068dde41",
                 "shasum": ""
             },
             "require": {
@@ -6689,7 +6689,7 @@
                 "issues": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/issues",
                 "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/filterDefaultFix"
             },
-            "time": "2023-03-11T20:05:45+00:00"
+            "time": "2023-03-11T20:17:43+00:00"
         },
         {
             "name": "maximebf/debugbar",
