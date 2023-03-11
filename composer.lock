@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "948718da68fccd33f8d0960f4be4c1f8",
+    "content-hash": "b163a7812721822e83e307e74223ef27",
     "packages": [
         {
             "name": "brick/math",
@@ -1789,6 +1789,81 @@
                 }
             ],
             "time": "2023-03-03T20:12:38+00:00"
+        },
+        {
+            "name": "lowerrocklabs/laravel-livewire-tables-advanced-filters",
+            "version": "dev-filterDefaultFix",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters.git",
+                "reference": "6dc39846f729579911f30b78d3c771e159ee94cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/6dc39846f729579911f30b78d3c771e159ee94cf",
+                "reference": "6dc39846f729579911f30b78d3c771e159ee94cf",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0|^9.0|^10.0",
+                "livewire/livewire": "^2.6",
+                "php": "^7.4|^8.0|^8.1",
+                "rappasoft/laravel-livewire-tables": "^2.0|dev-main|dev-master",
+                "spatie/laravel-package-tools": "^1.4.3"
+            },
+            "require-dev": {
+                "brianium/paratest": "^5.0|^6.1|^7.0",
+                "ext-sqlite3": "*",
+                "friendsofphp/php-cs-fixer": "^3.13",
+                "laravel/dusk": "^6.0|^7.0|^7.7",
+                "laravel/pint": "^1.2",
+                "nunomaduro/larastan": "^1.0|^2.0",
+                "orchestra/testbench": "^6.13|^7.0|^8.0|^9.0",
+                "pcov/clobber": "^2.0",
+                "phpstan/phpstan": "^1.8",
+                "phpunit/phpunit": "^8.0|^9.3|^10.0",
+                "spatie/laravel-ray": "^1.9",
+                "vimeo/psalm": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\LaravelLivewireTablesAdvancedFiltersServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe",
+                    "email": "joe@lowerrocklabs.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Additional/Advanced Filters for Rappasoft's Laravel Livewire Tables",
+            "homepage": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters",
+            "keywords": [
+                "LowerRockLabs",
+                "datatables",
+                "laravel",
+                "livewire",
+                "rappasoft",
+                "tables"
+            ],
+            "support": {
+                "issues": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/issues",
+                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/filterDefaultFix"
+            },
+            "time": "2023-03-11T22:25:54+00:00"
         },
         {
             "name": "maatwebsite/excel",
@@ -6617,81 +6692,6 @@
             "time": "2023-03-06T14:23:15+00:00"
         },
         {
-            "name": "lowerrocklabs/laravel-livewire-tables-advanced-filters",
-            "version": "dev-filterDefaultFix",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters.git",
-                "reference": "b98cb251e2e712e62f512a6fab776b1a068dde41"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/b98cb251e2e712e62f512a6fab776b1a068dde41",
-                "reference": "b98cb251e2e712e62f512a6fab776b1a068dde41",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^8.0|^9.0|^10.0",
-                "livewire/livewire": "^2.6",
-                "php": "^7.4|^8.0|^8.1",
-                "rappasoft/laravel-livewire-tables": "^2.0|dev-main|dev-master",
-                "spatie/laravel-package-tools": "^1.4.3"
-            },
-            "require-dev": {
-                "brianium/paratest": "^5.0|^6.1|^7.0",
-                "ext-sqlite3": "*",
-                "friendsofphp/php-cs-fixer": "^3.13",
-                "laravel/dusk": "^6.0|^7.0|^7.7",
-                "laravel/pint": "^1.2",
-                "nunomaduro/larastan": "^1.0|^2.0",
-                "orchestra/testbench": "^6.13|^7.0|^8.0|^9.0",
-                "pcov/clobber": "^2.0",
-                "phpstan/phpstan": "^1.8",
-                "phpunit/phpunit": "^8.0|^9.3|^10.0",
-                "spatie/laravel-ray": "^1.9",
-                "vimeo/psalm": "^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\LaravelLivewireTablesAdvancedFiltersServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LowerRockLabs\\LaravelLivewireTablesAdvancedFilters\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Joe",
-                    "email": "joe@lowerrocklabs.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Additional/Advanced Filters for Rappasoft's Laravel Livewire Tables",
-            "homepage": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters",
-            "keywords": [
-                "LowerRockLabs",
-                "datatables",
-                "laravel",
-                "livewire",
-                "rappasoft",
-                "tables"
-            ],
-            "support": {
-                "issues": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/issues",
-                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/filterDefaultFix"
-            },
-            "time": "2023-03-11T20:17:43+00:00"
-        },
-        {
             "name": "maximebf/debugbar",
             "version": "v1.18.2",
             "source": {
@@ -10586,8 +10586,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "rappasoft/laravel-livewire-tables": 20,
         "lowerrocklabs/laravel-livewire-tables-advanced-filters": 20,
+        "rappasoft/laravel-livewire-tables": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
