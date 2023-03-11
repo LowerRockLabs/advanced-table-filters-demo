@@ -15,7 +15,7 @@
         "rappasoft/laravel-livewire-tables": "^2.0|dev-main|dev-master"
     },
     "require-dev": {
-        "lowerrocklabs/laravel-livewire-tables-advanced-filters": "^1.0",
+        "lowerrocklabs/laravel-livewire-tables-advanced-filters": "dev-filterDefaultFix",
         "ext-sqlite3": "*",
         "barryvdh/laravel-debugbar": "^3.6",
         "brianium/paratest": "^7.1",

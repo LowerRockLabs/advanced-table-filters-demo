@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f9613feca50ec6a9401b1872dc42e03",
+    "content-hash": "948718da68fccd33f8d0960f4be4c1f8",
     "packages": [
         {
             "name": "brick/math",
@@ -6618,16 +6618,16 @@
         },
         {
             "name": "lowerrocklabs/laravel-livewire-tables-advanced-filters",
-            "version": "1.0.1",
+            "version": "dev-filterDefaultFix",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters.git",
-                "reference": "6be05513dc082f202a9e542317bf14c1566276f8"
+                "reference": "81a771b93fdb3d689aecc8527d5d0eea8bc4d053"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/6be05513dc082f202a9e542317bf14c1566276f8",
-                "reference": "6be05513dc082f202a9e542317bf14c1566276f8",
+                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/81a771b93fdb3d689aecc8527d5d0eea8bc4d053",
+                "reference": "81a771b93fdb3d689aecc8527d5d0eea8bc4d053",
                 "shasum": ""
             },
             "require": {
@@ -6687,9 +6687,9 @@
             ],
             "support": {
                 "issues": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/issues",
-                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/1.0.1"
+                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/filterDefaultFix"
             },
-            "time": "2023-03-11T19:42:41+00:00"
+            "time": "2023-03-11T20:05:45+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -10587,6 +10587,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "rappasoft/laravel-livewire-tables": 20,
+        "lowerrocklabs/laravel-livewire-tables-advanced-filters": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
