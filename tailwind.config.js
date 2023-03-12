@@ -10,19 +10,22 @@ module.exports = {
         require('@tailwindcss/aspect-ratio'),
         require('@tailwindcss/line-clamp')
     ],
-    purge: [
-        './vendor/laravel/jetstream/**/*.blade.php',
-        './vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/resources/views/**/*.blade.php',
-        './vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/resources/views/**/*.blade.php',
-        './vendor/rappasoft/laravel-livewire-tables/resources/views/tailwind/**/*.blade.php',
-        './vendor/rappasoft/laravel-livewire-tables/resources/views/**/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-        './app/Http/Livewire/UsersTable.php',
-    ],
-    safelist: [
-        'w-80',
-    ],
+    purge: {
+        content: [
+            './vendor/laravel/jetstream/**/*.blade.php',
+            './vendor/lowerrocklabs/laravel-livewire-tables-advanced-filters/resources/views/**/*.blade.php',
+            './vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/resources/views/**/*.blade.php',
+            './vendor/rappasoft/laravel-livewire-tables/resources/views/tailwind/**/*.blade.php',
+            './vendor/rappasoft/laravel-livewire-tables/resources/views/**/*.blade.php',
+            './storage/framework/views/*.php',
+            './resources/views/**/*.blade.php',
+            './app/Http/Livewire/UsersTable.php',
+        ],
+        safelist: [
+            'w-80',
+        ],
+    },
+
     darkMode: 'class',
     theme: {
         extend: {
