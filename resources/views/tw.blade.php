@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
     <livewire:styles />
-
+    <style>
+        .w-80 {
+            width: 20rem;
+        }
+    </style>
     @stack('styles')
 
     <script src="//unpkg.com/alpinejs" defer></script>

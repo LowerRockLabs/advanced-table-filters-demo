@@ -23,6 +23,7 @@ module.exports = {
         ],
         safelist: [
             'w-80',
+            'md:w-80'
         ],
     },
 
