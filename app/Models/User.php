@@ -48,7 +48,6 @@ class User extends Authenticatable
         'success_rate' => 'integer',
     ];
 
-    protected $with = ['parent:id,name'];
 
     public function parent(): HasOne
     {
