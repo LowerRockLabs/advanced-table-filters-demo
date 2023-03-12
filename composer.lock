@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fbc32e31467bda0be5c4341ced0efab",
+    "content-hash": "beb463a334a0f836529e03a9a9365452",
     "packages": [
         {
             "name": "brick/math",
@@ -1861,16 +1861,16 @@
         },
         {
             "name": "lowerrocklabs/laravel-livewire-tables-advanced-filters",
-            "version": "dev-filterDefaultFix",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters.git",
-                "reference": "6dc39846f729579911f30b78d3c771e159ee94cf"
+                "reference": "fb8ceb6673ed4c48f4f9c4cfda351c0a010c5beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/6dc39846f729579911f30b78d3c771e159ee94cf",
-                "reference": "6dc39846f729579911f30b78d3c771e159ee94cf",
+                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/fb8ceb6673ed4c48f4f9c4cfda351c0a010c5beb",
+                "reference": "fb8ceb6673ed4c48f4f9c4cfda351c0a010c5beb",
                 "shasum": ""
             },
             "require": {
@@ -1930,9 +1930,9 @@
             ],
             "support": {
                 "issues": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/issues",
-                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/filterDefaultFix"
+                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/1.0.6"
             },
-            "time": "2023-03-11T22:25:54+00:00"
+            "time": "2023-03-12T07:56:32+00:00"
         },
         {
             "name": "maatwebsite/excel",
@@ -8178,12 +8178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "89a8cbe64303bf8701b7c7ae59f62aa4335d1a9e"
+                "reference": "d20203bb2d1046c1f55bab9585547cfe62b997be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/89a8cbe64303bf8701b7c7ae59f62aa4335d1a9e",
-                "reference": "89a8cbe64303bf8701b7c7ae59f62aa4335d1a9e",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d20203bb2d1046c1f55bab9585547cfe62b997be",
+                "reference": "d20203bb2d1046c1f55bab9585547cfe62b997be",
                 "shasum": ""
             },
             "conflict": {
@@ -8746,6 +8746,9 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
+            "keywords": [
+                "dev"
+            ],
             "support": {
                 "issues": "https://github.com/Roave/SecurityAdvisories/issues",
                 "source": "https://github.com/Roave/SecurityAdvisories/tree/latest"
@@ -8760,7 +8763,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-11T06:05:00+00:00"
+            "time": "2023-03-12T20:04:22+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -10655,7 +10658,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "lowerrocklabs/laravel-livewire-tables-advanced-filters": 20,
         "rappasoft/laravel-livewire-tables": 20,
         "roave/security-advisories": 20
     },
