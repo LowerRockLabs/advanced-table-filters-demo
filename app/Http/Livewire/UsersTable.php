@@ -6,7 +6,6 @@ use App\Exports\UsersExport;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\CustomFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
@@ -59,12 +58,9 @@ class UsersTable extends DataTableComponent
         $this->setPrimaryKey('id')
             ->setDebugEnabled()
             ->setAdditionalSelects(['users.id as id'])
-            ->setAdditionalSelectRaws(['CONCAT(users.id,users.name) as sid', ['CONCAT(users.id,?,users.parent_id) as tta', 'wee']])
-
             ->setConfigurableAreas([
                 'toolbar-left-start' => ['includes.areas.toolbar-left-start', ['param1' => $this->myParam, 'param2' => ['param2' => 2]]],
             ])
-//            ->setPaginationMethod('simple')
             ->setReorderEnabled()
             ->setHideReorderColumnUnlessReorderingEnabled()
             ->setSecondaryHeaderTrAttributes(function ($rows) {
@@ -113,18 +109,6 @@ class UsersTable extends DataTableComponent
                 ->sortable()
                 ->collapseOnMobile()
                 ->excludeFromColumnSelect(),
-            Column::make('My one off column')
-            ->label(
-                fn ($row, Column $column) => 'eEst'
-            ),
-            Column::make('Id', 'id')
-                ->sortable()
-                ->collapseOnMobile()
-                ->excludeFromColumnSelect(),
-            Column::make('Full Name')
-            ->label(fn ($row) => $row->sid),
-            Column::make('Raw Select')
-            ->label(fn ($row) => $row->tta),
             Column::make('Name')
                 ->sortable(function (Builder $query, string $direction) {
                     return $query->orderBy('name', $direction); // Example, ->sortable() would work too.
@@ -132,12 +116,18 @@ class UsersTable extends DataTableComponent
                 ->searchable()
                 ->secondaryHeader($this->getFilterByKey('name'))
                 ->footer($this->getFilterByKey('name')),
+
+            Column::make('Success Rate', 'success_rate')
+            ->sortable()
+            ->searchable()
+            ->collapseOnTablet(),
+
             Column::make('parent_id', 'parent_id')
             ->sortable()
             ->collapseOnMobile()
             ->excludeFromColumnSelect(),
 
-            ComponentColumn::make('E-mail', 'email')
+            ComponentColumn::make('Email', 'email')
                 ->sortable()
                 ->searchable()
                 ->component('email')
@@ -164,15 +154,8 @@ class UsersTable extends DataTableComponent
                 ->sortable()
                 ->collapseOnMobile()
                 ->secondaryHeaderFilter('active')
-                ->footerFilter('active')
-                ->setView('customBool'),
-            Column::make('付款方式', 'email_verified_at')
-                ->sortable()
-                ->setCustomSlug('test123')
-                ->collapseOnTablet(),
-            Column::make('詳細', 'address.group.city.name')
-            ->sortable()
-            ->collapseOnTablet(),
+                ->footerFilter('active'),
+
             Column::make('Group City', 'address.group.city.name')
                 ->sortable()
                 ->searchable()
@@ -230,7 +213,7 @@ class UsersTable extends DataTableComponent
                     $builder->where('users.name', 'like', '%'.$value.'%');
                 })
                 ->hiddenFromMenus(),
-            TextFilter::make('E-mail')
+            TextFilter::make('Email')
                 ->config([
                     'maxlength' => 10,
                     'placeholder' => 'Search E-mail',
@@ -300,18 +283,7 @@ class UsersTable extends DataTableComponent
             //     $builder->withWhereHas('tags', fn ($query) => $query->whereIn('tags.id', $values));
             // }),
 
-            DatePickerFilter::make('Verified Before DateTime')
-            ->config([
-                'ariaDateFormat' => 'F j, Y',
-                'dateFormat' => 'Y-m-d',
-                'earliestDate' => '2020-01-01',
-                'latestDate' => '2023-07-01',
-                'timeEnabled' => false,
-            ])
-            ->filter(function (Builder $builder, string $value) {
-                $builder->where('email_verified_at', '<=', $value);
-            }),
-            DateRangeFilter::make('Verified Range')
+            DateRangeFilter::make('EMail Verified Range')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
                 'dateFormat' => 'Y-m-d',
@@ -327,15 +299,42 @@ class UsersTable extends DataTableComponent
                 [
                     'min' => 0,
                     'max' => 100,
-                    'minRange' => 0,
-                    'maxRange' => 100,
-                    'suffix' => '%',
-
                 ]
             )
+            ->config([
+                'minRange' => 0,
+                'maxRange' => 100,
+                'suffix' => '%',
+            ])
             ->filter(function (Builder $builder, array $values) {
-                $builder->whereBetween('users.id', [intval($values['min']), intval($values['max'])]);
+                $builder->where('users.success_rate', '>=', intval($values['min']))
+                ->where('users.success_rate', '<=', intval($values['max']));
             }),
+
+            DatePickerFilter::make('EMail Verified Before DateTime')
+            ->config([
+                'ariaDateFormat' => 'F j, Y',
+                'dateFormat' => 'Y-m-d',
+                'earliestDate' => '2020-01-01',
+                'latestDate' => '2023-07-01',
+                'timeEnabled' => true,
+            ])
+            ->filter(function (Builder $builder, string $value) {
+                $builder->whereDate('email_verified_at', '<=', $value);
+            }),
+
+            DatePickerFilter::make('Verified Before Date')
+            ->config([
+                'ariaDateFormat' => 'F j, Y',
+                'dateFormat' => 'Y-m-d',
+                'earliestDate' => '2020-01-01',
+                'latestDate' => '2023-07-01',
+                'timeEnabled' => false,
+            ])
+            ->filter(function (Builder $builder, string $value) {
+                $builder->where('email_verified_at', '<=', $value);
+            }),
+
             SelectFilter::make('E-mail Verified', 'email_verified_at')
                 ->setFilterPillTitle('Verified')
                 ->options([
@@ -375,23 +374,12 @@ class UsersTable extends DataTableComponent
                     'max' => '2021-12-31',
                 ])
                 ->filter(function (Builder $builder, string $value) {
-                    $builder->where('email_verified_at', '>=', $value);
+                    $builder->whereDate('email_verified_at', '>=', $value);
                 }),
             DateFilter::make('Verified To')
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('email_verified_at', '<=', $value);
                 }),
-            DatePickerFilter::make('Verified Before Date')
-            ->config([
-                'ariaDateFormat' => 'F j, Y',
-                'dateFormat' => 'Y-m-d',
-                'earliestDate' => '2020-01-01',
-                'latestDate' => '2023-07-01',
-                'timeEnabled' => false,
-            ])
-            ->filter(function (Builder $builder, string $value) {
-                $builder->where('email_verified_at', '<=', $value);
-            }),
 
         ];
     }
@@ -436,7 +424,7 @@ class UsersTable extends DataTableComponent
     public function reorder($items): void
     {
         foreach ($items as $item) {
-            User::find((int) $item['value'])->update(['sort' => (int) $item['order']])->addSelect(DB::raw('CONCAT(`users.id`,`users.name`) as casvv'));
+            User::find((int) $item['value'])->update(['sort' => (int) $item['order']]);
         }
     }
 }

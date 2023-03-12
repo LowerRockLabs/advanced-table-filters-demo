@@ -1,4 +1,4 @@
-<html x-cloak x-data="{ darkMode: localStorage.getItem('dark') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" x-bind:class="{ 'dark': darkMode }">
+<html x-cloak x-data="{ darkMode: localStorage.getItem('darkTw2') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('darkTw2', val))" x-bind:class="{ 'dark': darkMode }">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
     <livewire:styles />
+    <style>
+        .w-80 {
+            width: 20rem;
+        }
+    </style>
+    @stack('styles')
 
     <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
 <body class="dark:bg-gray-900 dark:text-white">
@@ -44,20 +49,20 @@
     </div>
 
     <div class="pb-6 mx-auto space-y-10 max-w-7xl">
-        <livewire:other-component />
-        <livewire:users-table myParam="Test" />
+        <div>
+            <livewire:other-component />
+        </div>
+
+        <div>
+            <livewire:users-table myParam="Test" />
+        </div>
     </div>
-    <div class="pb-6 mx-auto space-y-10 max-w-7xl">Test</div>
-    <div class="pb-6 mx-auto space-y-10 max-w-7xl">Test</div>
-    <div class="pb-6 mx-auto space-y-10 max-w-7xl">Test</div>
-    <div class="pb-6 mx-auto space-y-10 max-w-7xl">Test</div>
-    <div class="pb-96">Test</div>
-    <div class="pb-6 mx-auto space-y-10 max-w-7xl">Test</div>
 
     <livewire:scripts />
-    @stack('scripts')
     {{--    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script> --}}
-    <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.1.1/dist/livewire-sortable.js"></script>
+    <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.2.0/dist/livewire-sortable.js" defer></script>
+    @stack('scripts')
+
 </body>
 
 </html>

@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        LowerRockLabs\LaravelLivewireTablesAdvancedFilters\LaravelLivewireTablesAdvancedFiltersServiceProvider::class,
 
         /*
          * Application Service Providers...
