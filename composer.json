@@ -12,7 +12,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^10.0",
         "laravel/telescope": "^4.14",
-        "lowerrocklabs/laravel-livewire-tables-advanced-filters": "dev-main",
+        "lowerrocklabs/laravel-livewire-tables-advanced-filters": "^1.0",
         "maatwebsite/excel": "^3.1",
         "rappasoft/laravel-livewire-tables": "^2.0|dev-main|dev-master"
     },
