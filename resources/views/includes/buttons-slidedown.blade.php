@@ -1,6 +1,6 @@
 <div>
     <div style="text-align:center;margin-top:10px;margin-bottom:10px;">
-        <h3><strong>Pop-Over</strong></h3>
+        <h3>Pop-Over</h3>
         <div style="text-align:center;margin-top:10px;margin-bottom:10px;">
             <a href="{{ route('tw3') }}">Tailwind 3</a> |
             <a href="{{ route('tw') }}">Tailwind 2</a> |
@@ -9,7 +9,7 @@
         </div>
     </div>
     <div style="text-align:center;margin-top:10px;margin-bottom:10px;">
-        <h3>Slide-Down</h3>
+        <h3><strong>Slide-Down</strong></h3>
         <div style="text-align:center;margin-top:10px;margin-bottom:10px;">
             <a href="{{ route('tw3-slidedown') }}">Tailwind 3 SlideDown</a> |
             <a href="{{ route('tw-slidedown') }}">Tailwind 2 SlideDown</a> |

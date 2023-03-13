@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    @include('includes.buttons')
+    @include('includes.buttons-slidedown')
 
     <div class="px-4 my-5 text-center">
         <img class="mx-auto mb-4 d-block" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg"

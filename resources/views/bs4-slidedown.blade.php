@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    @include('includes.buttons')
+    @include('includes.buttons-slidedown')
 
     <div class="px-3 py-3 mx-auto text-center pt-md-5 pb-md-4">
         <img class="mx-auto mb-4 d-block" src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg"

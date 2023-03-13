@@ -19,7 +19,7 @@
 </head>
 
 <body class="dark:bg-gray-900 dark:text-white">
-    @include('includes.buttons')
+    @include('includes.buttons-slidedown')
 
     <div class="px-3 py-3 pt-5 pb-6 mx-auto text-center">
         <div
