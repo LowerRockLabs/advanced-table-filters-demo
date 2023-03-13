@@ -319,7 +319,8 @@ class UsersTableSlidedown extends DataTableComponent
             ->filter(function (Builder $builder, array $values) {
                 $builder->where('users.success_rate', '>=', intval($values['min']))
                 ->where('users.success_rate', '<=', intval($values['max']));
-            }),
+            })->setFilterSlidedownRow('2')
+            ->setFilterSlidedownColspan('2'),
 
             DatePickerFilter::make('EMail Verified Before DateTime')
             ->config([

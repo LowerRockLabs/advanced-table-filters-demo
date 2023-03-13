@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bf562ac25fb59a1683288d800698903",
+    "content-hash": "fe1c2b3d77e4153e05791352cddc95b6",
     "packages": [
         {
             "name": "brick/math",
@@ -1861,23 +1861,23 @@
         },
         {
             "name": "lowerrocklabs/laravel-livewire-tables-advanced-filters",
-            "version": "1.0.6",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters.git",
-                "reference": "fb8ceb6673ed4c48f4f9c4cfda351c0a010c5beb"
+                "reference": "64ebadc1de389b4d13c0105b48bbf75290ac5571"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/fb8ceb6673ed4c48f4f9c4cfda351c0a010c5beb",
-                "reference": "fb8ceb6673ed4c48f4f9c4cfda351c0a010c5beb",
+                "url": "https://api.github.com/repos/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/zipball/64ebadc1de389b4d13c0105b48bbf75290ac5571",
+                "reference": "64ebadc1de389b4d13c0105b48bbf75290ac5571",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^8.0|^9.0|^10.0",
                 "livewire/livewire": "^2.6",
                 "php": "^7.4|^8.0|^8.1",
-                "rappasoft/laravel-livewire-tables": "^2.0|dev-main|dev-master",
+                "rappasoft/laravel-livewire-tables": "^2.0|dev-main|dev-master|dev-devlatest",
                 "spatie/laravel-package-tools": "^1.4.3"
             },
             "require-dev": {
@@ -1894,6 +1894,7 @@
                 "spatie/laravel-ray": "^1.9",
                 "vimeo/psalm": "^4.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1930,9 +1931,9 @@
             ],
             "support": {
                 "issues": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/issues",
-                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/1.0.6"
+                "source": "https://github.com/LowerRockLabs/LaravelLivewireTablesAdvancedFilters/tree/main"
             },
-            "time": "2023-03-12T07:56:32+00:00"
+            "time": "2023-03-13T02:32:12+00:00"
         },
         {
             "name": "maatwebsite/excel",
@@ -3472,16 +3473,16 @@
         },
         {
             "name": "rappasoft/laravel-livewire-tables",
-            "version": "dev-master",
+            "version": "dev-devlatest",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LowerRockLabs/laravel-livewire-tables.git",
-                "reference": "57d81e509811aebee76392bdd5122dddf30441e4"
+                "reference": "19b61d976a5ecccb447d08bc975cc41cc8d1f1fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LowerRockLabs/laravel-livewire-tables/zipball/57d81e509811aebee76392bdd5122dddf30441e4",
-                "reference": "57d81e509811aebee76392bdd5122dddf30441e4",
+                "url": "https://api.github.com/repos/LowerRockLabs/laravel-livewire-tables/zipball/19b61d976a5ecccb447d08bc975cc41cc8d1f1fe",
+                "reference": "19b61d976a5ecccb447d08bc975cc41cc8d1f1fe",
                 "shasum": ""
             },
             "require": {
@@ -3491,12 +3492,12 @@
                 "spatie/laravel-package-tools": "^1.4.3"
             },
             "require-dev": {
+                "brianium/paratest": "^7.1",
                 "ext-sqlite3": "*",
-                "orchestra/testbench": "^6.13|^7.0|^8.0",
-                "phpunit/phpunit": "^9.3",
+                "orchestra/testbench": "^6.13|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^8.0|^9.3|^10.0",
                 "spatie/laravel-ray": "^1.9"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3546,7 +3547,7 @@
                 "tables"
             ],
             "support": {
-                "source": "https://github.com/LowerRockLabs/laravel-livewire-tables/tree/master"
+                "source": "https://github.com/LowerRockLabs/laravel-livewire-tables/tree/devlatest"
             },
             "funding": [
                 {
@@ -3554,7 +3555,7 @@
                     "url": "https://github.com/rappasoft"
                 }
             ],
-            "time": "2023-02-17T20:07:07+00:00"
+            "time": "2023-03-13T01:54:39+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -10673,6 +10674,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "lowerrocklabs/laravel-livewire-tables-advanced-filters": 20,
         "rappasoft/laravel-livewire-tables": 20,
         "roave/security-advisories": 20
     },
