@@ -60,7 +60,6 @@ class UsersTable extends DataTableComponent
          });
 
          dd($tags);*/
-         $this->setupTableAttributes();
         $this->setPrimaryKey('id')
             ->setDebugEnabled()
             ->setAdditionalSelects(['users.id as id'])
