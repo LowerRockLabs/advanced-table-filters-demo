@@ -14,7 +14,7 @@
         "laravel/telescope": "^4.14",
         "lowerrocklabs/laravel-livewire-tables-advanced-filters": "dev-develop",
         "maatwebsite/excel": "^3.1",
-        "rappasoft/laravel-livewire-tables": "dev-develop|^2.0|dev-main|dev-master"
+        "rappasoft/laravel-livewire-tables": "dev-devlatest|^2.0|dev-main|dev-master"
     },
     "require-dev": {
         "ext-sqlite3": "*",
