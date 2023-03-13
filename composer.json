@@ -14,7 +14,7 @@
         "laravel/telescope": "^4.14",
         "lowerrocklabs/laravel-livewire-tables-advanced-filters": "^1.0.4",
         "maatwebsite/excel": "^3.1",
-        "rappasoft/laravel-livewire-tables": "^2.0|dev-main|dev-master"
+        "rappasoft/laravel-livewire-tables": "dev-devlatest|^2.0|dev-main|dev-master"
     },
     "require-dev": {
         "ext-sqlite3": "*",
@@ -91,5 +91,11 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/LowerRockLabs/laravel-livewire-tables.git"
+        }
+    ]
 }

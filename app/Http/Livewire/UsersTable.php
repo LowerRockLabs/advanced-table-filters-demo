@@ -61,6 +61,10 @@ class UsersTable extends DataTableComponent
             ->setConfigurableAreas([
                 'toolbar-left-start' => ['includes.areas.toolbar-left-start', ['param1' => $this->myParam, 'param2' => ['param2' => 2]]],
             ])
+            ->setTableAttributes([
+                'x-data' => "{ test: \$wire.entangle('filterData'), init() { console.log(this.test) }}",
+
+              ])
             ->setReorderEnabled()
             ->setHideReorderColumnUnlessReorderingEnabled()
             ->setSecondaryHeaderTrAttributes(function ($rows) {
@@ -89,7 +93,8 @@ class UsersTable extends DataTableComponent
             })
             ->setTableRowUrlTarget(function ($row) {
                 return '_blank';
-            })->setEagerLoadAllRelationsEnabled();
+            })->setEagerLoadAllRelationsEnabled()
+            ->setFilterLayoutSlideDown();
 
         $this->allTags = Tag::select('id', 'name', 'created_at')
         ->orderBy('name')
@@ -306,6 +311,8 @@ class UsersTable extends DataTableComponent
                 'maxRange' => 100,
                 'suffix' => '%',
             ])
+            ->setFilterSlidedownRow('3')
+            ->setFilterSlidedownColspan('3')
             ->filter(function (Builder $builder, array $values) {
                 $builder->where('users.success_rate', '>=', intval($values['min']))
                 ->where('users.success_rate', '<=', intval($values['max']));
@@ -379,7 +386,9 @@ class UsersTable extends DataTableComponent
             DateFilter::make('Verified To')
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('email_verified_at', '<=', $value);
-                }),
+                })->setFilterSlidedownRow('1')
+                ->setFilterSlidedownColspan('4')
+    ,
 
         ];
     }

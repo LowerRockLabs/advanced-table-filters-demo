@@ -23,7 +23,25 @@ module.exports = {
         ],
         safelist: [
             'w-80',
-            'md:w-80'
+            'md:w-80',
+            'row-start-1',
+            'row-start-2',
+            'row-start-3',
+            'row-start-4',
+            'sm:col-span-1',
+            'sm:col-span-2',
+            'md:col-span-1',
+            'md:col-span-2',
+            'md:col-span-3',
+            'lg:col-span-1',
+            'lg:col-span-2',
+            'lg:col-span-3',
+            'lg:col-span-4',
+            'col-span-1',
+            'col-span-2',
+            'col-span-3',
+            'col-span-4',
+
         ],
     },
 

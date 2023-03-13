@@ -1,0 +1,920 @@
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Commands/MakeCommand.php                                                 
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :22    PHPDoc tag @var has invalid value (): Unexpected token "\n     ", expected type at offset 15                   
+  :22    Property Rappasoft\LaravelLivewireTables\Commands\MakeCommand::$parser has no type specified.                  
+  :27    PHPDoc tag @var has invalid value (): Unexpected token "\n     ", expected type at offset 15                   
+  :27    Property Rappasoft\LaravelLivewireTables\Commands\MakeCommand::$model has no type specified.                   
+  :65    Parameter #1 $value of static method Illuminate\Support\Str::studly() expects string, array|bool|string|null   
+         given.                                                                                                         
+  :68    Parameter #1 $force of method Rappasoft\LaravelLivewireTables\Commands\MakeCommand::createClass() expects      
+         bool, array|bool|string|null given.                                                                            
+  :98    Method Rappasoft\LaravelLivewireTables\Commands\MakeCommand::ensureDirectoryExists() has parameter $path with  
+         no type specified.                                                                                             
+  :113   Parameter #3 $subject of function str_replace expects array|string, string|false given.                        
+  :140   PHPDoc tag @throws with type Rappasoft\LaravelLivewireTables\Commands\Exception is not subtype of Throwable    
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/DataTableComponent.php                                                  
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :42    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$listeners has no type specified.                
+  :102   Method Rappasoft\LaravelLivewireTables\DataTableComponent::columns() return type has no value type specified  
+         in iterable type array.                                                                                       
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Events/ColumnsSelected.php                                              
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :12    Property Rappasoft\LaravelLivewireTables\Events\ColumnsSelected::$columns has no type specified.              
+  :13    Property Rappasoft\LaravelLivewireTables\Events\ColumnsSelected::$key has no type specified.                  
+  :15    Method Rappasoft\LaravelLivewireTables\Events\ColumnsSelected::__construct() has parameter $columns with no   
+         type specified.                                                                                               
+  :15    Method Rappasoft\LaravelLivewireTables\Events\ColumnsSelected::__construct() has parameter $key with no type  
+         specified.                                                                                                    
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/ComponentUtilities.php (in context of class                       
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :15    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$table type has no value type specified in        
+         iterable type array.                                                                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :16    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$theme has no type specified.                     
+  :18    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$model has no type specified.                     
+  :19    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$primaryKey has no type specified.                
+  :24    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$componentWrapperAttributes type has no value     
+         type specified in iterable type array.                                                                         
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :25    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$tableWrapperAttributes type has no value type    
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :26    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$tableAttributes type has no value type           
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :27    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$theadAttributes type has no value type           
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :28    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$tbodyAttributes type has no value type           
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :29    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$thAttributesCallback has no type specified.      
+  :30    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$thSortButtonAttributesCallback has no type       
+         specified.                                                                                                     
+  :31    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$trAttributesCallback has no type specified.      
+  :32    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$trUrlCallback has no type specified.             
+  :33    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$trUrlTargetCallback has no type specified.       
+  :34    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$tdAttributesCallback has no type specified.      
+  :35    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$collapsingColumnsStatus has no type specified.   
+  :37    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$additionalSelects type has no value type         
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :39    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$configurableAreas type has no value type         
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :56    Method Rappasoft\LaravelLivewireTables\DataTableComponent::queryString() has invalid return type null.         
+  :59    Method Rappasoft\LaravelLivewireTables\DataTableComponent::queryString() should return array<array<null>> but  
+         returns array<string, array<string, string|null>>.                                                             
+  :73    Method Rappasoft\LaravelLivewireTables\DataTableComponent::updated() has parameter $name with no type          
+         specified.                                                                                                     
+  :73    Method Rappasoft\LaravelLivewireTables\DataTableComponent::updated() has parameter $value with no type         
+         specified.                                                                                                     
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Configuration/BulkActionsConfiguration.php (in context of class  
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                           
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :12    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setBulkActions() has parameter $bulkActions with   
+         no value type specified in iterable type array.                                                               
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Configuration/ColumnSelectConfiguration.php (in context of class  
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :10    PHPDoc tag @var above a method has no effect.                                                                  
+  :10    PHPDoc tag @var does not specify variable name.                                                                
+  :20    PHPDoc tag @var above a method has no effect.                                                                  
+  :20    PHPDoc tag @var does not specify variable name.                                                                
+  :30    PHPDoc tag @var above a method has no effect.                                                                  
+  :30    PHPDoc tag @var does not specify variable name.                                                                
+  :40    PHPDoc tag @var above a method has no effect.                                                                  
+  :40    PHPDoc tag @var does not specify variable name.                                                                
+  :50    PHPDoc tag @var above a method has no effect.                                                                  
+  :50    PHPDoc tag @var does not specify variable name.                                                                
+  :60    PHPDoc tag @var above a method has no effect.                                                                  
+  :60    PHPDoc tag @var does not specify variable name.                                                                
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Configuration/ComponentConfiguration.php (in context of class     
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :26    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setComponentWrapperAttributes() has parameter       
+         $attributes with no value type specified in iterable type array.                                               
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :40    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setTableWrapperAttributes() has parameter           
+         $attributes with no value type specified in iterable type array.                                               
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :54    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setTableAttributes() has parameter $attributes      
+         with no value type specified in iterable type array.                                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :68    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setTheadAttributes() has parameter $attributes      
+         with no value type specified in iterable type array.                                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :80    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setTbodyAttributes() has parameter $attributes      
+         with no value type specified in iterable type array.                                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :304   Method Rappasoft\LaravelLivewireTables\DataTableComponent::setAdditionalSelects() has parameter $selects with  
+         no type specified.                                                                                             
+  :320   Method Rappasoft\LaravelLivewireTables\DataTableComponent::setConfigurableAreas() has parameter $areas with    
+         no value type specified in iterable type array.                                                                
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :361   Access to an undefined property Rappasoft\LaravelLivewireTables\DataTableComponent::$dataTableFingerprint.     
+  :368   Access to an undefined property Rappasoft\LaravelLivewireTables\DataTableComponent::$queryStringAlias.         
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Configuration/FilterConfiguration.php (in context of class  
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                      
+ ------ --------------------------------------------------------------------------------------------------------- 
+  :110   PHPDoc tag @param references unknown parameter: $status                                                  
+ ------ --------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Configuration/FooterConfiguration.php (in context of class  
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                      
+ ------ --------------------------------------------------------------------------------------------------------- 
+  :10    PHPDoc tag @var above a method has no effect.                                                            
+  :10    PHPDoc tag @var does not specify variable name.                                                          
+  :20    PHPDoc tag @var above a method has no effect.                                                            
+  :20    PHPDoc tag @var does not specify variable name.                                                          
+  :30    PHPDoc tag @var above a method has no effect.                                                            
+  :30    PHPDoc tag @var does not specify variable name.                                                          
+  :40    PHPDoc tag @var above a method has no effect.                                                            
+  :40    PHPDoc tag @var does not specify variable name.                                                          
+  :50    PHPDoc tag @var above a method has no effect.                                                            
+  :50    PHPDoc tag @var does not specify variable name.                                                          
+  :60    PHPDoc tag @var above a method has no effect.                                                            
+  :60    PHPDoc tag @var does not specify variable name.                                                          
+  :70    PHPDoc tag @var above a method has no effect.                                                            
+  :70    PHPDoc tag @var does not specify variable name.                                                          
+  :80    PHPDoc tag @var above a method has no effect.                                                            
+  :80    PHPDoc tag @var does not specify variable name.                                                          
+ ------ --------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Configuration/PaginationConfiguration.php (in context of class   
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                           
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :14    PHPDoc tag @return with type string is incompatible with native type                                          
+         Rappasoft\LaravelLivewireTables\DataTableComponent.                                                           
+  :134   Method Rappasoft\LaravelLivewireTables\DataTableComponent::setPerPageAccepted() has parameter $accepted with  
+         no value type specified in iterable type array.                                                               
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Configuration/RefreshConfiguration.php (in context of class  
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                       
+ ------ ---------------------------------------------------------------------------------------------------------- 
+  :14    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$refresh (bool|string) does not accept int.  
+ ------ ---------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------ 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Configuration/SecondaryHeaderConfiguration.php (in context of  
+         class Rappasoft\LaravelLivewireTables\DataTableComponent)                                                   
+ ------ ------------------------------------------------------------------------------------------------------------ 
+  :10    PHPDoc tag @var above a method has no effect.                                                               
+  :10    PHPDoc tag @var does not specify variable name.                                                             
+  :20    PHPDoc tag @var above a method has no effect.                                                               
+  :20    PHPDoc tag @var does not specify variable name.                                                             
+  :30    PHPDoc tag @var above a method has no effect.                                                               
+  :30    PHPDoc tag @var does not specify variable name.                                                             
+  :40    PHPDoc tag @var above a method has no effect.                                                               
+  :40    PHPDoc tag @var does not specify variable name.                                                             
+  :50    PHPDoc tag @var above a method has no effect.                                                               
+  :50    PHPDoc tag @var does not specify variable name.                                                             
+ ------ ------------------------------------------------------------------------------------------------------------ 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/BulkActionsHelpers.php (in context of class              
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                           
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :84    Method Rappasoft\LaravelLivewireTables\DataTableComponent::hasBulkActions() should return bool but returns    
+         int<0, max>.                                                                                                  
+  :90    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getBulkActions() return type has no value type     
+         specified in iterable type array.                                                                             
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+  :124   Method Rappasoft\LaravelLivewireTables\DataTableComponent::setSelected() has parameter $selected with no      
+         value type specified in iterable type array.                                                                  
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+  :124   Method Rappasoft\LaravelLivewireTables\DataTableComponent::setSelected() return type has no value type        
+         specified in iterable type array.                                                                             
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+  :132   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getSelected() return type has no value type        
+         specified in iterable type array.                                                                             
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+  :142   Method Rappasoft\LaravelLivewireTables\DataTableComponent::hasSelected() should return bool but returns int.  
+  :175   Called 'count' on Laravel collection, but could have been retrieved as a query.                               
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/ColumnHelpers.php (in context of class                    
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :24    Parameter #1 $table of method Rappasoft\LaravelLivewireTables\Views\Column::setTable() expects string,         
+         string|null given.                                                                                             
+  :69    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getColumnRelations() return type has no value type  
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :81    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getColumnRelationStrings() return type has no       
+         value type specified in iterable type array.                                                                   
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :131   Method Rappasoft\LaravelLivewireTables\DataTableComponent::shouldCollapseOnMobile() should return bool but     
+         returns int.                                                                                                   
+  :175   Method Rappasoft\LaravelLivewireTables\DataTableComponent::shouldCollapseOnTablet() should return bool but     
+         returns int.                                                                                                   
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/ColumnSelectHelpers.php (in context of class            
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                          
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  :12    PHPDoc tag @var above a method has no effect.                                                                
+  :12    PHPDoc tag @var does not specify variable name.                                                              
+  :21    PHPDoc tag @param references unknown parameter: $status                                                      
+  :21    PHPDoc tag @return with type $this(Rappasoft\LaravelLivewireTables\DataTableComponent) is incompatible with  
+         native type bool.                                                                                            
+  :30    PHPDoc tag @param references unknown parameter: $status                                                      
+  :30    PHPDoc tag @return with type $this(Rappasoft\LaravelLivewireTables\DataTableComponent) is incompatible with  
+         native type bool.                                                                                            
+  :39    PHPDoc tag @param references unknown parameter: $status                                                      
+  :39    PHPDoc tag @return with type $this(Rappasoft\LaravelLivewireTables\DataTableComponent) is incompatible with  
+         native type bool.                                                                                            
+  :48    PHPDoc tag @param references unknown parameter: $status                                                      
+  :48    PHPDoc tag @return with type $this(Rappasoft\LaravelLivewireTables\DataTableComponent) is incompatible with  
+         native type bool.                                                                                            
+  :57    PHPDoc tag @param references unknown parameter: $status                                                      
+  :57    PHPDoc tag @return with type $this(Rappasoft\LaravelLivewireTables\DataTableComponent) is incompatible with  
+         native type bool.                                                                                            
+  :66    Method Rappasoft\LaravelLivewireTables\DataTableComponent::columnSelectIsEnabledForColumn() has parameter    
+         $column with no type specified.                                                                              
+  :66    PHPDoc tag @param references unknown parameter: $status                                                      
+  :66    PHPDoc tag @return with type $this(Rappasoft\LaravelLivewireTables\DataTableComponent) is incompatible with  
+         native type bool.                                                                                            
+  :75    PHPDoc tag @param references unknown parameter: $columns                                                     
+  :77    Method Rappasoft\LaravelLivewireTables\DataTableComponent::forgetColumnSelectSession() should return         
+         $this(Rappasoft\LaravelLivewireTables\DataTableComponent) but return statement is missing.                   
+ ------ ------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/ComponentHelpers.php (in context of class                 
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :24    PHPDoc tag @param has invalid value (Builder): Unexpected token "\n     ", expected variable at offset 25      
+  :72    PHPDoc tag @return with type string is incompatible with native type void.                                     
+  :167   PHPDoc tag @param references unknown parameter: $index                                                         
+  :287   PHPDoc tag @param references unknown parameter: $name                                                          
+  :287   PHPDoc tag @return with type string is incompatible with native type bool.                                     
+  :329   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getTableRowUrl() has parameter $row with no type    
+         specified.                                                                                                     
+  :339   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getTableRowUrlTarget() has parameter $row with no   
+         type specified.                                                                                                
+  :347   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getAdditionalSelects() return type has no value     
+         type specified in iterable type array.                                                                         
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :355   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getConfigurableAreas() return type has no value     
+         type specified in iterable type array.                                                                         
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :379   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getConfigurableAreaFor() has parameter $area with   
+         no value type specified in iterable type array.                                                                
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :381   Possibly invalid array key type array|string.                                                                  
+  :395   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getParametersForConfigurableArea() has parameter    
+         $area with no value type specified in iterable type array.                                                     
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :395   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getParametersForConfigurableArea() return type has  
+         no value type specified in iterable type array.                                                                
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :397   Possibly invalid array key type array|string.                                                                  
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/FilterHelpers.php (in context of class                    
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :74    Method Rappasoft\LaravelLivewireTables\DataTableComponent::hasFilters() should return bool but returns int.    
+  :79    Method Rappasoft\LaravelLivewireTables\DataTableComponent::hasVisibleFilters() should return bool but returns  
+         int.                                                                                                           
+  :94    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getFilterByKey() has no return type specified.      
+  :101   Method Rappasoft\LaravelLivewireTables\DataTableComponent::setFilter() has no return type specified.           
+  :101   Method Rappasoft\LaravelLivewireTables\DataTableComponent::setFilter() has parameter $value with no type       
+         specified.                                                                                                     
+  :132   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getAppliedFilters() return type has no value type   
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :138   Unable to resolve the template type TKey in call to function collect                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type                         
+  :138   Unable to resolve the template type TValue in call to function collect                                         
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type                         
+  :145   Method Rappasoft\LaravelLivewireTables\DataTableComponent::hasAppliedFiltersWithValues() should return bool    
+         but returns int<0, max>.                                                                                       
+  :150   Method                                                                                                         
+         Rappasoft\LaravelLivewireTables\DataTableComponent::hasAppliedVisibleFiltersWithValuesThatCanBeCleared()       
+         should return bool but returns int.                                                                            
+  :166   Method Rappasoft\LaravelLivewireTables\DataTableComponent::hasAppliedVisibleFiltersForPills() should return    
+         bool but returns int.                                                                                          
+  :172   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getAppliedFiltersWithValues() return type has no    
+         value type specified in iterable type array.                                                                   
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :179   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getAppliedFilterWithValue() has no return type      
+         specified.                                                                                                     
+  :189   Method Rappasoft\LaravelLivewireTables\DataTableComponent::resetFilter() has parameter $filter with no type    
+         specified.                                                                                                     
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/FooterHelpers.php (in context of class                  
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                          
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  :12    PHPDoc tag @var above a method has no effect.                                                                
+  :12    PHPDoc tag @var does not specify variable name.                                                              
+  :20    PHPDoc tag @var above a method has no effect.                                                                
+  :20    PHPDoc tag @var does not specify variable name.                                                              
+  :28    PHPDoc tag @var above a method has no effect.                                                                
+  :28    PHPDoc tag @var does not specify variable name.                                                              
+  :36    PHPDoc tag @var above a method has no effect.                                                                
+  :36    PHPDoc tag @var does not specify variable name.                                                              
+  :44    PHPDoc tag @var above a method has no effect.                                                                
+  :44    PHPDoc tag @var does not specify variable name.                                                              
+  :52    PHPDoc tag @var above a method has no effect.                                                                
+  :52    PHPDoc tag @var does not specify variable name.                                                              
+  :60    PHPDoc tag @var above a method has no effect.                                                                
+  :60    PHPDoc tag @var does not specify variable name.                                                              
+  :68    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getFooterTrAttributes() has parameter $rows with  
+         no type specified.                                                                                           
+  :68    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getFooterTrAttributes() return type has no value  
+         type specified in iterable type array.                                                                       
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                    
+  :68    PHPDoc tag @var above a method has no effect.                                                                
+  :68    PHPDoc tag @var does not specify variable name.                                                              
+  :76    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getFooterTdAttributes() has parameter $rows with  
+         no type specified.                                                                                           
+  :76    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getFooterTdAttributes() return type has no value  
+         type specified in iterable type array.                                                                       
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                    
+  :76    PHPDoc tag @var above a method has no effect.                                                                
+  :76    PHPDoc tag @var does not specify variable name.                                                              
+ ------ ------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/PaginationHelpers.php (in context of class                
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :94    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getComputedPageName() should return string but      
+         returns string|null.                                                                                           
+  :108   Method Rappasoft\LaravelLivewireTables\DataTableComponent::getPerPageAccepted() return type has no value type  
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/SecondaryHeaderHelpers.php (in context of class         
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                          
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  :12    PHPDoc tag @var above a method has no effect.                                                                
+  :12    PHPDoc tag @var does not specify variable name.                                                              
+  :20    PHPDoc tag @var above a method has no effect.                                                                
+  :20    PHPDoc tag @var does not specify variable name.                                                              
+  :28    PHPDoc tag @var above a method has no effect.                                                                
+  :28    PHPDoc tag @var does not specify variable name.                                                              
+  :36    PHPDoc tag @var above a method has no effect.                                                                
+  :36    PHPDoc tag @var does not specify variable name.                                                              
+  :44    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getSecondaryHeaderTrAttributes() has parameter    
+         $rows with no type specified.                                                                                
+  :44    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getSecondaryHeaderTrAttributes() return type has  
+         no value type specified in iterable type array.                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                    
+  :44    PHPDoc tag @var above a method has no effect.                                                                
+  :44    PHPDoc tag @var does not specify variable name.                                                              
+  :52    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getSecondaryHeaderTdAttributes() has parameter    
+         $rows with no type specified.                                                                                
+  :52    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getSecondaryHeaderTdAttributes() return type has  
+         no value type specified in iterable type array.                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                    
+  :52    PHPDoc tag @var above a method has no effect.                                                                
+  :52    PHPDoc tag @var does not specify variable name.                                                              
+ ------ ------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/Helpers/SortingHelpers.php (in context of class                   
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :26    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getSorts() return type has no value type specified  
+         in iterable type array.                                                                                        
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :36    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setSorts() has parameter $sorts with no value type  
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :36    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setSorts() return type has no value type specified  
+         in iterable type array.                                                                                        
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :67    Method Rappasoft\LaravelLivewireTables\DataTableComponent::hasSorts() should return bool but returns int<0,    
+         max>.                                                                                                          
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithBulkActions.php (in context of class                          
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :15    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$bulkActions type has no value type specified in  
+         iterable type array.                                                                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :16    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$selected type has no value type specified in     
+         iterable type array.                                                                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :19    Method Rappasoft\LaravelLivewireTables\DataTableComponent::bulkActions() return type has no value type         
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithColumnSelect.php (in context of class                         
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :14    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$selectedColumns type has no value type           
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :49    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getDefaultVisibleColumns() return type has no       
+         value type specified in iterable type array.                                                                   
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :60    Method Rappasoft\LaravelLivewireTables\DataTableComponent::selectAllColumns() has no return type specified.    
+  :67    Method Rappasoft\LaravelLivewireTables\DataTableComponent::deselectAllColumns() has no return type specified.  
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithData.php (in context of class                                                                                   
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                                                                              
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  :14    Method Rappasoft\LaravelLivewireTables\DataTableComponent::getRows() has no return type specified.                                                               
+  :32    Parameter #1 $column of method                                                                                                                                   
+         Illuminate\Database\Eloquent\Builder<Illuminate\Database\Eloquent\Model>::orderBy() expects                                                                      
+         Closure|Illuminate\Database\Eloquent\Builder<Illuminate\Database\Eloquent\Model>|Illuminate\Database\Query\Builder|Illuminate\Database\Query\Expression|string,  
+         string|null given.                                                                                                                                               
+  :40    Method Rappasoft\LaravelLivewireTables\DataTableComponent::executeQuery() has no return type specified.                                                          
+  :69    Parameter #1 $relations of method                                                                                                                                
+         Illuminate\Database\Eloquent\Builder<Illuminate\Database\Eloquent\Model>::with() expects array|string,                                                           
+         string|null given.                                                                                                                                               
+  :107   Method Rappasoft\LaravelLivewireTables\DataTableComponent::performJoin() has parameter $foreign with no type                                                     
+         specified.                                                                                                                                                       
+  :107   Method Rappasoft\LaravelLivewireTables\DataTableComponent::performJoin() has parameter $other with no type                                                       
+         specified.                                                                                                                                                       
+  :107   Method Rappasoft\LaravelLivewireTables\DataTableComponent::performJoin() has parameter $table with no type                                                       
+         specified.                                                                                                                                                       
+  :107   Method Rappasoft\LaravelLivewireTables\DataTableComponent::performJoin() has parameter $type with no type                                                        
+         specified.                                                                                                                                                       
+  :111   Property Illuminate\Database\Query\Builder::$joins (array) on left side of ?? is not nullable.                                                                   
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithEvents.php (in context of class                               
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :7     Method Rappasoft\LaravelLivewireTables\DataTableComponent::setSortEvent() has no return type specified.        
+  :7     Method Rappasoft\LaravelLivewireTables\DataTableComponent::setSortEvent() has parameter $direction with no     
+         type specified.                                                                                                
+  :7     Method Rappasoft\LaravelLivewireTables\DataTableComponent::setSortEvent() has parameter $field with no type    
+         specified.                                                                                                     
+  :12    Method Rappasoft\LaravelLivewireTables\DataTableComponent::clearSortEvent() has no return type specified.      
+  :17    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setFilterEvent() has no return type specified.      
+  :17    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setFilterEvent() has parameter $filter with no      
+         type specified.                                                                                                
+  :17    Method Rappasoft\LaravelLivewireTables\DataTableComponent::setFilterEvent() has parameter $value with no type  
+         specified.                                                                                                     
+  :22    Method Rappasoft\LaravelLivewireTables\DataTableComponent::clearFilterEvent() has no return type specified.    
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithFilters.php (in context of class                             
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                           
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :20    Method Rappasoft\LaravelLivewireTables\DataTableComponent::filters() return type has no value type specified  
+         in iterable type array.                                                                                       
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------ 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithFooter.php (in context of class                      
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                   
+ ------ ------------------------------------------------------------------------------------------------------ 
+  :16    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$footerTrAttributesCallback has no type  
+         specified.                                                                                            
+  :17    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$footerTdAttributesCallback has no type  
+         specified.                                                                                            
+ ------ ------------------------------------------------------------------------------------------------------ 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithPagination.php (in context of class                           
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :17    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$perPageAccepted type has no value type           
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :39    Method Rappasoft\LaravelLivewireTables\DataTableComponent::updatedPerPage() has parameter $value with no type  
+         specified.                                                                                                     
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithSecondaryHeader.php (in context of class                      
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :15    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$secondaryHeaderTrAttributesCallback has no type  
+         specified.                                                                                                     
+  :16    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$secondaryHeaderTdAttributesCallback has no type  
+         specified.                                                                                                     
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Traits/WithSorting.php (in context of class                                                                                
+         Rappasoft\LaravelLivewireTables\DataTableComponent)                                                                                                              
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  :14    Property Rappasoft\LaravelLivewireTables\DataTableComponent::$sorts type has no value type specified in                                                          
+         iterable type array.                                                                                                                                             
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                                                                        
+  :59    Parameter #1 $column of method                                                                                                                                   
+         Illuminate\Database\Eloquent\Builder<Illuminate\Database\Eloquent\Model>::orderBy() expects                                                                      
+         Closure|Illuminate\Database\Eloquent\Builder<Illuminate\Database\Eloquent\Model>|Illuminate\Database\Query\Builder|Illuminate\Database\Query\Expression|string,  
+         string|null given.                                                                                                                                               
+  :69    Call to function is_null() with Rappasoft\LaravelLivewireTables\Views\Column|null will always evaluate to                                                        
+         false.                                                                                                                                                           
+  :79    Parameter #1 $callback of function call_user_func expects callable(): mixed, (callable(): mixed)|null given.                                                     
+  :81    Parameter #1 $column of method                                                                                                                                   
+         Illuminate\Database\Eloquent\Builder<Illuminate\Database\Eloquent\Model>::orderBy() expects                                                                      
+         Closure|Illuminate\Database\Eloquent\Builder<Illuminate\Database\Eloquent\Model>|Illuminate\Database\Query\Builder|Illuminate\Database\Query\Expression|string,  
+         string|null given.                                                                                                                                               
+  :85    Cannot access offset 1 on array<int, string>|false.                                                                                                              
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Column.php                                                  
+ ------ -------------------------------------------------------------------------------------------------------- 
+  :35    Property Rappasoft\LaravelLivewireTables\Views\Column::$relations type has no value type specified in   
+         iterable type array.                                                                                    
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type               
+  :38    Property Rappasoft\LaravelLivewireTables\Views\Column::$sortCallback has no type specified.             
+  :40    Property Rappasoft\LaravelLivewireTables\Views\Column::$searchCallback has no type specified.           
+  :47    Property Rappasoft\LaravelLivewireTables\Views\Column::$formatCallback has no type specified.           
+  :49    Property Rappasoft\LaravelLivewireTables\Views\Column::$labelCallback has no type specified.            
+  :54    Property Rappasoft\LaravelLivewireTables\Views\Column::$secondaryHeaderCallback has no type specified.  
+  :56    Property Rappasoft\LaravelLivewireTables\Views\Column::$footerCallback has no type specified.           
+  :91    Unsafe usage of new static().                                                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unsafe-usage-of-new-static                       
+ ------ -------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Columns/BooleanColumn.php                                   
+ ------ -------------------------------------------------------------------------------------------------------- 
+  :19    Property Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn::$callback has no type specified.  
+  :21    Method Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn::getContents() has no return type    
+         specified.                                                                                              
+ ------ -------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Columns/ButtonGroupColumn.php                                  
+ ------ ----------------------------------------------------------------------------------------------------------- 
+  :15    Property Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn::$buttons type has no value type  
+         specified in iterable type array.                                                                          
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                  
+  :17    Property Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn::$attributesCallback has no type  
+         specified.                                                                                                 
+  :26    Method Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn::getContents() has no return type   
+         specified.                                                                                                 
+ ------ ----------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Columns/ComponentColumn.php                                       
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :19    Property Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn::$attributesCallback has no type       
+         specified.                                                                                                    
+  :20    Property Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn::$slotCallback has no type specified.  
+  :27    Method Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn::getContents() has no return type        
+         specified.                                                                                                    
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Columns/ImageColumn.php                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :17    Property Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn::$locationCallback has no type specified.   
+  :18    Property Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn::$attributesCallback has no type            
+         specified.                                                                                                     
+  :27    Method Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn::getContents() has no return type specified.  
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Columns/LinkColumn.php                                             
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :17    Property Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::$titleCallback has no type specified.       
+  :18    Property Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::$locationCallback has no type specified.    
+  :19    Property Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::$attributesCallback has no type specified.  
+  :28    Method Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::getContents() has no return type specified.   
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Filter.php                                                        
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :21    Property Rappasoft\LaravelLivewireTables\Views\Filter::$filterCallback has no type specified.                 
+  :22    Property Rappasoft\LaravelLivewireTables\Views\Filter::$config type has no value type specified in iterable   
+         type array.                                                                                                   
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+  :24    Property Rappasoft\LaravelLivewireTables\Views\Filter::$filterPillValues type has no value type specified in  
+         iterable type array.                                                                                          
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                     
+  :44    Unsafe usage of new static().                                                                                 
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unsafe-usage-of-new-static                             
+  :49    Method Rappasoft\LaravelLivewireTables\Views\Filter::render() has no return type specified.                   
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Filters/DateFilter.php                                             
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :11    Method Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter::validate() has no return type specified.      
+  :11    Method Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter::validate() has parameter $value with no type  
+         specified.                                                                                                     
+  :20    Method Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter::isEmpty() has parameter $value with no type   
+         specified.                                                                                                     
+  :25    Method Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter::render() has no return type specified.        
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Filters/DateTimeFilter.php                                         
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :11    Method Rappasoft\LaravelLivewireTables\Views\Filters\DateTimeFilter::validate() has no return type specified.  
+  :11    Method Rappasoft\LaravelLivewireTables\Views\Filters\DateTimeFilter::validate() has parameter $value with no   
+         type specified.                                                                                                
+  :20    Method Rappasoft\LaravelLivewireTables\Views\Filters\DateTimeFilter::isEmpty() has parameter $value with no    
+         type specified.                                                                                                
+  :25    Method Rappasoft\LaravelLivewireTables\Views\Filters\DateTimeFilter::render() has no return type specified.    
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Filters/MultiSelectDropdownFilter.php                              
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :10    Property Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectDropdownFilter::$options type has no value   
+         type specified in iterable type array.                                                                         
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :13    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectDropdownFilter::options() has parameter        
+         $options with no value type specified in iterable type array.                                                  
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :20    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectDropdownFilter::getOptions() return type has   
+         no value type specified in iterable type array.                                                                
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :42    Parameter #1 $callback of method Illuminate\Support\Collection<int,string>::filter() expects                   
+         (callable(string, int): bool)|null, Closure(mixed): int<0, max> given.                                         
+  :47    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectDropdownFilter::validate() has no return type  
+         specified.                                                                                                     
+  :47    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectDropdownFilter::validate() has parameter       
+         $value with no type specified.                                                                                 
+  :66    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectDropdownFilter::getFilterPillValue() has       
+         parameter $value with no type specified.                                                                       
+  :72    Unable to resolve the template type TMapWithKeysKey in call to method                                          
+         Illuminate\Support\Collection<(int|string),mixed>::mapWithKeys()                                               
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type                         
+  :72    Unable to resolve the template type TMapWithKeysValue in call to method                                        
+         Illuminate\Support\Collection<(int|string),mixed>::mapWithKeys()                                               
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type                         
+  :73    Parameter #1 $callback of method Illuminate\Support\Collection<(int|string),mixed>::mapWithKeys() expects      
+         callable(mixed, (int|string)): array, Closure(mixed, mixed): iterable given.                                   
+  :84    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectDropdownFilter::isEmpty() has parameter        
+         $value with no type specified.                                                                                 
+  :95    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectDropdownFilter::render() has no return type    
+         specified.                                                                                                     
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Filters/MultiSelectFilter.php                                      
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :10    Property Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter::$options type has no value type      
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :12    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter::options() has parameter $options with  
+         no value type specified in iterable type array.                                                                
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :19    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter::getOptions() return type has no value  
+         type specified in iterable type array.                                                                         
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :29    Parameter #1 $callback of method Illuminate\Support\Collection<int,string>::filter() expects                   
+         (callable(string, int): bool)|null, Closure(mixed): int<0, max> given.                                         
+  :34    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter::validate() has no return type          
+         specified.                                                                                                     
+  :34    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter::validate() has parameter $value with   
+         no type specified.                                                                                             
+  :53    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter::getFilterPillValue() has parameter     
+         $value with no type specified.                                                                                 
+  :68    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter::isEmpty() has parameter $value with    
+         no type specified.                                                                                             
+  :73    Method Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter::render() has no return type            
+         specified.                                                                                                     
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Filters/NumberFilter.php                                         
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  :10    Method Rappasoft\LaravelLivewireTables\Views\Filters\NumberFilter::validate() has no return type specified.  
+  :10    Method Rappasoft\LaravelLivewireTables\Views\Filters\NumberFilter::validate() has parameter $value with no   
+         type specified.                                                                                              
+  :15    Method Rappasoft\LaravelLivewireTables\Views\Filters\NumberFilter::isEmpty() has parameter $value with no    
+         type specified.                                                                                              
+  :20    Method Rappasoft\LaravelLivewireTables\Views\Filters\NumberFilter::render() has no return type specified.    
+ ------ ------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Filters/SelectFilter.php                                           
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :10    Property Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter::$options type has no value type           
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :12    Method Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter::options() has parameter $options with no    
+         value type specified in iterable type array.                                                                   
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :19    Method Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter::getOptions() return type has no value type  
+         specified in iterable type array.                                                                              
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :27    Unable to resolve the template type TKey in call to function collect                                           
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type                         
+  :35    Method Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter::validate() has no return type specified.    
+  :35    Method Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter::validate() has parameter $value with no     
+         type specified.                                                                                                
+  :44    Method Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter::getFilterPillValue() has parameter $value   
+         with no type specified.                                                                                        
+  :47    Unable to resolve the template type TMapWithKeysKey in call to method                                          
+         Illuminate\Support\Collection<(int|string),mixed>::mapWithKeys()                                               
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type                         
+  :47    Unable to resolve the template type TMapWithKeysValue in call to method                                        
+         Illuminate\Support\Collection<(int|string),mixed>::mapWithKeys()                                               
+         💡 See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type                         
+  :48    Parameter #1 $callback of method Illuminate\Support\Collection<(int|string),mixed>::mapWithKeys() expects      
+         callable(mixed, (int|string)): array, Closure(mixed, mixed): iterable given.                                   
+  :52    Method Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter::isEmpty() has parameter $value with no      
+         type specified.                                                                                                
+  :57    Method Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter::render() has no return type specified.      
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Filters/TextFilter.php                                             
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :10    Method Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter::validate() has no return type specified.      
+  :10    Method Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter::validate() has parameter $value with no type  
+         specified.                                                                                                     
+  :19    Method Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter::isEmpty() has parameter $value with no type   
+         specified.                                                                                                     
+  :24    Method Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter::render() has no return type specified.        
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Configuration/ButtonGroupColumnConfiguration.php (in        
+         context of class Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn)                              
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :7     Method Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn::buttons() has parameter $buttons with  
+         no value type specified in iterable type array.                                                                
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Configuration/ColumnConfiguration.php (in context of class  
+         Rappasoft\LaravelLivewireTables\Views\Column)                                                                  
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :135   Method Rappasoft\LaravelLivewireTables\Views\Column::hideIf() has parameter $condition with no type            
+         specified.                                                                                                     
+  :167   Method Rappasoft\LaravelLivewireTables\Views\Column::secondaryHeader() has parameter $callback with no type    
+         specified.                                                                                                     
+  :167   PHPDoc tag @param references unknown parameter: $field                                                         
+  :191   Method Rappasoft\LaravelLivewireTables\Views\Column::footer() has parameter $callback with no type specified.  
+  :191   PHPDoc tag @param references unknown parameter: $field                                                         
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Helpers/ButtonGroupColumnHelpers.php (in context of class   
+         Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn)                                               
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :14    Method Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn::getButtons() return type has no value  
+         type specified in iterable type array.                                                                         
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :21    Method Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn::getAttributesCallback() has no return  
+         type specified.                                                                                                
+  :26    Method Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn::hasAttributesCallback() has no return  
+         type specified.                                                                                                
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Helpers/ColumnHelpers.php (in context of class              
+         Rappasoft\LaravelLivewireTables\Views\Column)                                                                  
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  :139   Method Rappasoft\LaravelLivewireTables\Views\Column::renderContents() has no return type specified.            
+  :149   Method Rappasoft\LaravelLivewireTables\Views\Column::getContents() has no return type specified.               
+  :152   Parameter #1 $callback of function call_user_func expects callable(): mixed, (callable(): mixed)|null given.   
+  :164   Parameter #1 $callback of function call_user_func expects callable(): mixed, (callable(): mixed)|null given.   
+  :177   Method Rappasoft\LaravelLivewireTables\Views\Column::getValue() has no return type specified.                  
+  :268   Method Rappasoft\LaravelLivewireTables\Views\Column::getSortingPillTitle() should return string but returns    
+         string|null.                                                                                                   
+  :306   Method Rappasoft\LaravelLivewireTables\Views\Column::getCustomSortingPillDirections() should return string     
+         but returns string|null.                                                                                       
+  :310   Method Rappasoft\LaravelLivewireTables\Views\Column::getCustomSortingPillDirections() should return string     
+         but returns string|null.                                                                                       
+  :344   Cannot call method getDefaultReorderColumn() on Rappasoft\LaravelLivewireTables\DataTableComponent|null.       
+  :378   Method Rappasoft\LaravelLivewireTables\Views\Column::view() has parameter $view with no type specified.        
+  :381   Call to an undefined method Illuminate\Contracts\View\Factory|Illuminate\View\View::withValue().               
+  :395   PHPDoc tag @param references unknown parameter: $callback                                                      
+  :395   PHPDoc tag @return with type $this(Rappasoft\LaravelLivewireTables\Views\Column) is incompatible with native   
+         type bool.                                                                                                     
+  :451   Method Rappasoft\LaravelLivewireTables\Views\Column::getSecondaryHeaderContents() has parameter $rows with no  
+         type specified.                                                                                                
+  :464   Parameter #1 $component of method Rappasoft\LaravelLivewireTables\Views\Filter::render() expects               
+         Rappasoft\LaravelLivewireTables\DataTableComponent, Rappasoft\LaravelLivewireTables\DataTableComponent|null    
+         given.                                                                                                         
+  :466   Cannot call method getFilterByKey() on Rappasoft\LaravelLivewireTables\DataTableComponent|null.                
+  :469   Parameter #1 $component of method Rappasoft\LaravelLivewireTables\Views\Filter::render() expects               
+         Rappasoft\LaravelLivewireTables\DataTableComponent, Rappasoft\LaravelLivewireTables\DataTableComponent|null    
+         given.                                                                                                         
+  :506   Method Rappasoft\LaravelLivewireTables\Views\Column::getFooterContents() has parameter $rows with no type      
+         specified.                                                                                                     
+  :519   Parameter #1 $component of method Rappasoft\LaravelLivewireTables\Views\Filter::render() expects               
+         Rappasoft\LaravelLivewireTables\DataTableComponent, Rappasoft\LaravelLivewireTables\DataTableComponent|null    
+         given.                                                                                                         
+  :521   Cannot call method getFilterByKey() on Rappasoft\LaravelLivewireTables\DataTableComponent|null.                
+  :524   Parameter #1 $component of method Rappasoft\LaravelLivewireTables\Views\Filter::render() expects               
+         Rappasoft\LaravelLivewireTables\DataTableComponent, Rappasoft\LaravelLivewireTables\DataTableComponent|null    
+         given.                                                                                                         
+  :537   Method Rappasoft\LaravelLivewireTables\Views\Column::arrayToAttributes() has parameter $attributes with no     
+         value type specified in iterable type array.                                                                   
+         💡 See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type                      
+  :539   Method Rappasoft\LaravelLivewireTables\Views\Column::arrayToAttributes() should return bool but returns        
+         string.                                                                                                        
+  :554   Cannot call method hasTableRowUrl() on Rappasoft\LaravelLivewireTables\DataTableComponent|null.                
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Helpers/ComponentColumnHelpers.php (in context of class   
+         Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn)                                               
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  :7     Method Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn::getAttributesCallback() has no return  
+         type specified.                                                                                              
+  :17    Method Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn::getSlotCallback() has no return type   
+         specified.                                                                                                   
+  :30    Method Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn::getComponentView() has no return type  
+         specified.                                                                                                   
+ ------ ------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Helpers/FilterHelpers.php (in context of class            
+         Rappasoft\LaravelLivewireTables\Views\Filter)                                                                
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  :167   Method Rappasoft\LaravelLivewireTables\Views\Filter::getFilterPillValue() has parameter $value with no type  
+         specified.                                                                                                   
+ ------ ------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Helpers/ImageColumnHelpers.php (in context of class        
+         Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn)                                                    
+ ------ -------------------------------------------------------------------------------------------------------------- 
+  :8     Method Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn::getLocationCallback() has no return type    
+         specified.                                                                                                    
+  :13    Method Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn::hasLocationCallback() has no return type    
+         specified.                                                                                                    
+  :18    Method Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn::getAttributesCallback() has no return type  
+         specified.                                                                                                    
+  :23    Method Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn::hasAttributesCallback() has no return type  
+         specified.                                                                                                    
+ ------ -------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Helpers/LinkColumnHelpers.php (in context of class        
+         Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn)                                                    
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  :8     Method Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::getTitleCallback() has no return type       
+         specified.                                                                                                   
+  :13    Method Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::hasTitleCallback() has no return type       
+         specified.                                                                                                   
+  :18    Method Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::getLocationCallback() has no return type    
+         specified.                                                                                                   
+  :23    Method Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::hasLocationCallback() has no return type    
+         specified.                                                                                                   
+  :28    Method Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::getAttributesCallback() has no return type  
+         specified.                                                                                                   
+  :33    Method Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn::hasAttributesCallback() has no return type  
+         specified.                                                                                                   
+ ------ ------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------- 
+  Line   rappasoft/laravel-livewire-tables/src/Views/Traits/Helpers/RelationshipHelpers.php (in context of class  
+         Rappasoft\LaravelLivewireTables\Views\Column)                                                            
+ ------ --------------------------------------------------------------------------------------------------------- 
+  :22    Method Rappasoft\LaravelLivewireTables\Views\Column::hasRelations() should return bool but returns int.  
+ ------ --------------------------------------------------------------------------------------------------------- 
+
+ [ERROR] Found 352 errors                                                                                               
+
