@@ -10,7 +10,6 @@ use Illuminate\Support\Str;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\CustomFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DateRangeFilter;
-use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\Traits\HasAdvancedFilters;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SlimSelectFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\NumberRangeFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SmartSelectFilter;
@@ -29,7 +28,6 @@ use Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter;
 
 class UsersTable extends DataTableComponent
 {
-    use HasAdvancedFilters;
 
     public $myParam = 'Default';
 
