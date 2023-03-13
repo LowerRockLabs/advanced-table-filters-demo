@@ -311,8 +311,6 @@ class UsersTable extends DataTableComponent
                 'maxRange' => 100,
                 'suffix' => '%',
             ])
-            ->setFilterSlidedownRow('3')
-            ->setFilterSlidedownColspan('3')
             ->filter(function (Builder $builder, array $values) {
                 $builder->where('users.success_rate', '>=', intval($values['min']))
                 ->where('users.success_rate', '<=', intval($values['max']));
@@ -386,8 +384,7 @@ class UsersTable extends DataTableComponent
             DateFilter::make('Verified To')
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('email_verified_at', '<=', $value);
-                })->setFilterSlidedownRow('1')
-                ->setFilterSlidedownColspan('4')
+                })
     ,
 
         ];
