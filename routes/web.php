@@ -32,3 +32,19 @@ Route::get('/tailwind', function () {
 Route::get('/tailwind3', function () {
     return view('tw3');
 })->name('tw3');
+
+Route::get('/bootstrap-4-slidedown', function () {
+    return view('bs4-slidedown');
+})->name('bs4');
+
+Route::get('/bootstrap-5-slidedown', function () {
+    return view('bs5-slidedown');
+})->name('bs5');
+
+Route::get('/tailwind-slidedown', function () {
+    return view('tw-slidedown');
+})->name('tw');
+
+Route::get('/tailwind3-slidedown', function () {
+    return view('tw3-slidedown');
+})->name('tw3');

@@ -26,7 +26,7 @@ use Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter;
 use Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter;
 use Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter;
 
-class UsersTable extends DataTableComponent
+class UsersTableSlidedown extends DataTableComponent
 {
     public $myParam = 'Default';
 
@@ -97,7 +97,7 @@ class UsersTable extends DataTableComponent
             })
             ->setTableRowUrlTarget(function ($row) {
                 return '_blank';
-            })->setEagerLoadAllRelationsEnabled();
+            })->setEagerLoadAllRelationsEnabled()->setFilterLayoutSlideDown();
 
 
 
