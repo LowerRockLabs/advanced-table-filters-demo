@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\CustomFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DateRangeFilter;
+use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\Traits\HasAdvancedFilters;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SlimSelectFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\NumberRangeFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\SmartSelectFilter;
@@ -28,6 +29,8 @@ use Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter;
 
 class UsersTable extends DataTableComponent
 {
+    use HasAdvancedFilters;
+
     public $myParam = 'Default';
 
     public $filterData = [];
@@ -59,16 +62,13 @@ class UsersTable extends DataTableComponent
          });
 
          dd($tags);*/
+         $this->setupTableAttributes();
         $this->setPrimaryKey('id')
             ->setDebugEnabled()
             ->setAdditionalSelects(['users.id as id'])
             ->setConfigurableAreas([
                 'toolbar-left-start' => ['includes.areas.toolbar-left-start', ['param1' => $this->myParam, 'param2' => ['param2' => 2]]],
             ])
-            ->setTableAttributes([
-                'x-data' => "{ test: \$wire.entangle('filterData'), init() { console.log(this.test) }}",
-
-              ])
             ->setReorderEnabled()
             ->setHideReorderColumnUnlessReorderingEnabled()
             ->setSecondaryHeaderTrAttributes(function ($rows) {
@@ -221,8 +221,7 @@ class UsersTable extends DataTableComponent
                 ])
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('users.name', 'like', '%'.$value.'%');
-                })
-                ->hiddenFromMenus(),
+                }),
             TextFilter::make('Email')
                 ->config([
                     'maxlength' => 10,
