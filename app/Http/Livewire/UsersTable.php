@@ -7,6 +7,7 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\CustomFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DateRangeFilter;
@@ -123,6 +124,14 @@ class UsersTable extends DataTableComponent
                 ->searchable()
                 ->secondaryHeader($this->getFilterByKey('name'))
                 ->footer($this->getFilterByKey('name')),
+
+            Column::make('Verified At', 'email_verified_at')
+            ->sortable()
+            ->searchable()
+            ->collapseOnTablet()
+            ->format(
+                fn($value, $row, Column $column) => Carbon::parse($value)->format('d M Y')
+            ),
 
             Column::make('Success Rate', 'success_rate')
             ->sortable()
