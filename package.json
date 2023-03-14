@@ -21,5 +21,12 @@
         "postcss-import": "^12.0.0",
         "tailwindcss": "^2.2.10"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@alpinejs/focus": "^3.12.0",
+        "@fontsource/inter": "^4.5.15",
+        "@nextapps-be/livewire-sortablejs": "^0.2.0",
+        "alpinejs": "^3.12.0",
+        "flatpickr": "^4.6.13",
+        "livewire-sortable": "^0.2.2"
+    }
 }

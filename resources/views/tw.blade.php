@@ -5,7 +5,6 @@
 
     <title>Tailwind 2 Tables</title>
 
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
     <livewire:styles />
     <style>
@@ -14,8 +13,8 @@
         }
     </style>
     @stack('styles')
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
-    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body class="dark:bg-gray-900 dark:text-white">
@@ -59,8 +58,6 @@
     </div>
 
     <livewire:scripts />
-    {{--    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script> --}}
-    <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.2.0/dist/livewire-sortable.js" defer></script>
     @stack('scripts')
 
 </body>

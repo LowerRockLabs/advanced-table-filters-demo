@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" crossorigin="anonymous">
 
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     <livewire:styles />
     @stack('styles')
@@ -58,9 +58,6 @@
 
     <livewire:scripts />
 
-    {{--    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script> --}}
-    {{--  <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.1.1/dist/livewire-sortable.js"></script> --}}
-    <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.2.0/dist/livewire-sortable.js"></script>
     @stack('scripts')
 
 </body>
