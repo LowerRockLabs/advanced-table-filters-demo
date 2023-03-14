@@ -104,7 +104,8 @@ class UsersTable extends DataTableComponent
         ->get()
         ->map(function ($tag) {
             $tagValue['id'] = $tag->id;
-            $tagValue['name'] = "<span class='test'>$tag->name</span>";
+            $tagValue['name'] = $tag->name;
+            $tagValue['htmlName'] = "<span class='test'>$tag->name</span>";
 
             return $tagValue;
         })->keyBy('id')->toArray();
