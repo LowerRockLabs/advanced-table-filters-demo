@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/example', function () {
+    return view('example');
+})->name('example');
+
 Route::get('/bootstrap-4', function () {
     return view('bs4');
 })->name('bs4');

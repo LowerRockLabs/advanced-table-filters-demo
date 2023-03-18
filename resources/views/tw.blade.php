@@ -52,8 +52,11 @@
             <livewire:other-component />
         </div>
 
-        <div>
-            <livewire:users-table myParam="Test" />
+        <div class="flex flex-col h-screen">
+
+            <div class="flex-grow overflow-auto">
+                <livewire:users-table myParam="Test" />
+            </div>
         </div>
     </div>
 

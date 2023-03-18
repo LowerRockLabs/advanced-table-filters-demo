@@ -5,9 +5,9 @@ namespace App\Http\Livewire;
 use App\Exports\UsersExport;
 use App\Models\Tag;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
-use Carbon\Carbon;
 //use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\CustomFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DatePickerFilter;
 use LowerRockLabs\LaravelLivewireTablesAdvancedFilters\DateRangeFilter;
@@ -29,7 +29,6 @@ use Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter;
 
 class UsersTable extends DataTableComponent
 {
-
     public $myParam = 'Default';
 
     public $filterData = [];
@@ -39,10 +38,6 @@ class UsersTable extends DataTableComponent
     public array $users1 = [];
 
     public array $allTags = [];
-
-
-
-
 
     public function configure(): void
     {
@@ -66,6 +61,12 @@ class UsersTable extends DataTableComponent
             ->setAdditionalSelects(['users.id as id'])
             ->setConfigurableAreas([
                 'toolbar-left-start' => ['includes.areas.toolbar-left-start', ['param1' => $this->myParam, 'param2' => ['param2' => 2]]],
+            ])
+            ->setThAttributes(function (Column $column) {
+                return ['class' => 'sticky top-0'];
+            })
+            ->setTableAttributes([
+                'class' => 'relative w-full border',
             ])
             ->setReorderEnabled()
             ->setHideReorderColumnUnlessReorderingEnabled()
@@ -96,8 +97,6 @@ class UsersTable extends DataTableComponent
             ->setTableRowUrlTarget(function ($row) {
                 return '_blank';
             })->setEagerLoadAllRelationsEnabled();
-
-
 
         $this->allTags = Tag::select('id', 'name', 'created_at')
         ->orderBy('name')
@@ -131,7 +130,7 @@ class UsersTable extends DataTableComponent
             ->searchable()
             ->collapseOnTablet()
             ->format(
-                fn($value, $row, Column $column) => Carbon::parse($value)->format('d M Y')
+                fn ($value, $row, Column $column) => Carbon::parse($value)->format('d M Y')
             ),
 
             Column::make('Success Rate', 'success_rate')
@@ -395,8 +394,7 @@ class UsersTable extends DataTableComponent
             DateFilter::make('Verified To')
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('email_verified_at', '<=', $value);
-                })
-    ,
+                }),
 
         ];
     }
