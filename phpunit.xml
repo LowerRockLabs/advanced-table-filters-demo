@@ -7,9 +7,6 @@
         <testsuite name="Standard">
             <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Standard</directory>
         </testsuite>
-        <testsuite name="Laravel8">
-            <directory>vendor/lowerrocklabs/LaravelLivewireTablesAdvancedFilters/tests/Standard8</directory>
-        </testsuite>
     </testsuites>
     <coverage>
         <include>

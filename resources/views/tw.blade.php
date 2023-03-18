@@ -7,14 +7,8 @@
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
     <livewire:styles />
-    <style>
-        .w-80 {
-            width: 20rem;
-        }
-    </style>
     @stack('styles')
     <script src="{{ mix('js/app.js') }}" defer></script>
-
 </head>
 
 <body class="dark:bg-gray-900 dark:text-white">

@@ -2,7 +2,7 @@
 
 // config for LowerRockLabs/LaravelLivewireTablesAdvancedFilters
 return [
-    'customFilterMenuWidth' => 'md:w-80',
+    'customFilterMenuWidth' => 'w-70 md:w-80 lg:w-100',
     'slimSelect' => [
         'defaults' => [''],
     ],
