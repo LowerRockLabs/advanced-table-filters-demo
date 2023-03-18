@@ -62,12 +62,6 @@ class UsersTable extends DataTableComponent
             ->setConfigurableAreas([
                 'toolbar-left-start' => ['includes.areas.toolbar-left-start', ['param1' => $this->myParam, 'param2' => ['param2' => 2]]],
             ])
-            ->setThAttributes(function (Column $column) {
-                return ['class' => 'sticky top-0'];
-            })
-            ->setTableAttributes([
-                'class' => 'relative w-full border',
-            ])
             ->setReorderEnabled()
             ->setHideReorderColumnUnlessReorderingEnabled()
             ->setSecondaryHeaderTrAttributes(function ($rows) {
@@ -309,6 +303,7 @@ class UsersTable extends DataTableComponent
             ->filter(function (Builder $builder, array $dateRange) {
                 $builder->whereDate('email_verified_at', '>=', $dateRange['minDate'])->whereDate('email_verified_at', '<=', $dateRange['maxDate']);
             }),
+
             NumberRangeFilter::make('Success Rate')
             ->options(
                 [
@@ -347,7 +342,7 @@ class UsersTable extends DataTableComponent
                 'timeEnabled' => false,
             ])
             ->filter(function (Builder $builder, string $value) {
-                $builder->where('email_verified_at', '<=', $value);
+                $builder->whereDate('email_verified_at', '<=', $value);
             }),
 
             SelectFilter::make('E-mail Verified', 'email_verified_at')
