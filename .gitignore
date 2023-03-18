@@ -32,3 +32,4 @@ public/css/app.css
 resources/views/example.blade.php
 public/js/app.js.LICENSE.txt
 public/mix-manifest.json
+.env.dusk.local
