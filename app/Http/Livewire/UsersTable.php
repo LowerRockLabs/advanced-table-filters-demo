@@ -324,7 +324,7 @@ class UsersTable extends DataTableComponent
             DatePickerFilter::make('EMail Verified Before DateTime')
             ->config([
                 'ariaDateFormat' => 'F j, Y',
-                'dateFormat' => 'Y-m-d',
+                'dateFormat' => 'Y-m-d H:i',
                 'earliestDate' => '2020-01-01',
                 'latestDate' => '2023-07-01',
                 'timeEnabled' => true,
