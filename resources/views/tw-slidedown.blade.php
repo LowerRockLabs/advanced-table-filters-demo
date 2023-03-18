@@ -5,7 +5,6 @@
 
     <title>Tailwind 2 Tables</title>
 
-    <link rel="stylesheet" href="css/inter.css" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
     <livewire:styles />
     <style>

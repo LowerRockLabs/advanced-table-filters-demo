@@ -1106,7 +1106,6 @@
         }
     </script>
 
-    <link rel="stylesheet" href="css/inter.css" />
     <style>
         [x-cloak] {
             display: none;
