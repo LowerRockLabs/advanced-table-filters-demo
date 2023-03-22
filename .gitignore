@@ -35,3 +35,8 @@ public/mix-manifest.json
 .env.dusk.local
 .env.dusk
 phpunit.dusk.xml
+composerCfg/*
+docker/*
+nginx/*
+docker-compose.yml
+config/debugbar.php

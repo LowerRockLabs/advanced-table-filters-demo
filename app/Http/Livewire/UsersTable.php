@@ -39,6 +39,8 @@ class UsersTable extends DataTableComponent
 
     public array $allTags = [];
 
+    public array $visibleRowIds = [];
+
     public function configure(): void
     {
         /* $tags = Tag::query()
@@ -58,6 +60,9 @@ class UsersTable extends DataTableComponent
          dd($tags);*/
         $this->setPrimaryKey('id')
             ->setDebugEnabled()
+            ->setComponentWrapperAttributes([
+                "x-data" => "{ visibleRowIds: \$wire.entangle('visibleRowIds') }"
+            ])
             ->setAdditionalSelects(['users.id as id'])
             ->setConfigurableAreas([
                 'toolbar-left-start' => ['includes.areas.toolbar-left-start', ['param1' => $this->myParam, 'param2' => ['param2' => 2]]],
